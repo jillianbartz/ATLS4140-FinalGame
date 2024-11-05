@@ -7,17 +7,26 @@ func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
 
+func _init():
+	var i = 0
+	while(i < 3):
+		var dup = self.duplicate()
+		self.get_parent().add_child(dup)
+		i+= 1
+		print(dup)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	global_position.y = randf_range(0,680)
+	global_position.y = randf_range(0,650)
 	global_position.x = randf_range(1150, 4000)
-	print(global_position.x)
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if(Global.egg_score >= 2):
+		queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Chef")):
+		Global.egg_score += 1
 		queue_free()

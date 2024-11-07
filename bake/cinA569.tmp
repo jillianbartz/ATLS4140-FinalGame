@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=3 uid="uid://xrmhfqugwr6p"]
+
+[ext_resource type="Script" path="res://chef.gd" id="1_jkxph"]
+[ext_resource type="Script" path="res://cinnamon_roll_1.gd" id="1_u0kvi"]
+[ext_resource type="Script" path="res://egg.gd" id="2_m6rog"]
+[ext_resource type="Shader" path="res://test.gdshader" id="3_oh85f"]
+[ext_resource type="Texture2D" uid="uid://jrlpr7ek2qv" path="res://icon.svg" id="4_j3ife"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hdjj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnt30"]
+shader = ExtResource("3_oh85f")
+shader_parameter/scale = 1.0
+shader_parameter/mod_color = Color(0.588235, 0, 0, 1)
+shader_parameter/flash = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5pm8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5e6kt"]
+
+[node name="CinnamonRoll1" type="Node2D"]
+script = ExtResource("1_u0kvi")
+
+[node name="Chef" type="CharacterBody2D" parent="." groups=["Chef"]]
+position = Vector2(62, 285)
+scale = Vector2(2.84903, 4.45325)
+script = ExtResource("1_jkxph")
+
+[node name="ChefCollision" type="CollisionShape2D" parent="Chef"]
+shape = SubResource("RectangleShape2D_6hdjj")
+
+[node name="ChefSprite" type="Sprite2D" parent="Chef"]
+material = SubResource("ShaderMaterial_tnt30")
+scale = Vector2(0.175286, 0.161678)
+texture = ExtResource("4_j3ife")
+
+[node name="Egg1" type="CharacterBody2D" parent="."]
+position = Vector2(1020, 269)
+scale = Vector2(2.49087, 1.78533)
+script = ExtResource("2_m6rog")
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg1"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="EggSprite" type="Sprite2D" parent="Egg1"]
+rotation = -3.14159
+scale = Vector2(13.7157, -14.3146)
+texture = SubResource("CanvasTexture_5e6kt")
+
+[node name="Area2D" type="Area2D" parent="Egg1"]
+scale = Vector2(1.18014, 1.42599)
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg1/Area2D"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="Egg2" type="CharacterBody2D" parent="."]
+position = Vector2(1020, 269)
+scale = Vector2(2.49087, 1.78533)
+script = ExtResource("2_m6rog")
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg2"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="EggSprite" type="Sprite2D" parent="Egg2"]
+rotation = -3.14159
+scale = Vector2(13.7157, -14.3146)
+texture = SubResource("CanvasTexture_5e6kt")
+
+[node name="Area2D" type="Area2D" parent="Egg2"]
+scale = Vector2(1.18014, 1.42599)
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg2/Area2D"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="Egg3" type="CharacterBody2D" parent="."]
+position = Vector2(1020, 269)
+scale = Vector2(2.49087, 1.78533)
+script = ExtResource("2_m6rog")
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg3"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="EggSprite" type="Sprite2D" parent="Egg3"]
+rotation = -3.14159
+scale = Vector2(13.7157, -14.3146)
+texture = SubResource("CanvasTexture_5e6kt")
+
+[node name="Area2D" type="Area2D" parent="Egg3"]
+scale = Vector2(1.18014, 1.42599)
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg3/Area2D"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="Egg4" type="CharacterBody2D" parent="."]
+position = Vector2(1020, 269)
+scale = Vector2(2.49087, 1.78533)
+script = ExtResource("2_m6rog")
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg4"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="EggSprite" type="Sprite2D" parent="Egg4"]
+rotation = -3.14159
+scale = Vector2(13.7157, -14.3146)
+texture = SubResource("CanvasTexture_5e6kt")
+
+[node name="Area2D" type="Area2D" parent="Egg4"]
+scale = Vector2(1.18014, 1.42599)
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg4/Area2D"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="Egg5" type="CharacterBody2D" parent="."]
+position = Vector2(1020, 269)
+scale = Vector2(2.49087, 1.78533)
+script = ExtResource("2_m6rog")
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg5"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="EggSprite" type="Sprite2D" parent="Egg5"]
+rotation = -3.14159
+scale = Vector2(13.7157, -14.3146)
+texture = SubResource("CanvasTexture_5e6kt")
+
+[node name="Area2D" type="Area2D" parent="Egg5"]
+scale = Vector2(1.18014, 1.42599)
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg5/Area2D"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="Egg6" type="CharacterBody2D" parent="."]
+position = Vector2(1020, 269)
+scale = Vector2(2.49087, 1.78533)
+script = ExtResource("2_m6rog")
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg6"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="EggSprite" type="Sprite2D" parent="Egg6"]
+rotation = -3.14159
+scale = Vector2(13.7157, -14.3146)
+texture = SubResource("CanvasTexture_5e6kt")
+
+[node name="Area2D" type="Area2D" parent="Egg6"]
+scale = Vector2(1.18014, 1.42599)
+
+[node name="EggCollision" type="CollisionShape2D" parent="Egg6/Area2D"]
+shape = SubResource("CircleShape2D_j5pm8")
+
+[node name="Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.00892535, 0.0118367)
+theme_override_font_sizes/font_size = 5000
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Egg1/Area2D" to="Egg1" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Egg2/Area2D" to="Egg2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Egg3/Area2D" to="Egg3" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Egg4/Area2D" to="Egg4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Egg5/Area2D" to="Egg5" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Egg6/Area2D" to="Egg6" method="_on_area_2d_body_entered"]

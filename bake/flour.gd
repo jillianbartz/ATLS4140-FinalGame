@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var speed = 300
 @export var direction = Vector2(-1,0)
 
-var y_movement = 0
 
 func _physics_process(delta):
 	velocity = direction * speed
@@ -11,12 +10,16 @@ func _physics_process(delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if(Global.flour_spawn_y >= 600):
-		y_movement = -20
-	elif( Global.flour_spawn_y <= 50):
-		print(y_movement)
-		y_movement = 20
-	Global.flour_spawn_y += y_movement
+	print("pos:", Global.flour_spawn_y, "up or down:", Global.y_up)
+	if(Global.y_up == false):
+		Global.flour_spawn_y += 20
+		if(Global.flour_spawn_y >= 580):
+			Global.y_up = true
+	else:
+		Global.flour_spawn_y -= 20
+		if(Global.flour_spawn_y <= 30):
+			Global.y_up = false
+		
 	Global.flour_spawn_x += 40
 	global_position.y = Global.flour_spawn_y
 	global_position.x = Global.flour_spawn_x

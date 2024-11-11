@@ -23,7 +23,7 @@ func spawn_eggs():
 
 func spawn_flour():
 	var flour_duplicates = 0
-	while(flour_duplicates < 50):
+	while(flour_duplicates < 300):
 		var new_flour = flour.instantiate()
 		add_child(new_flour)
 		flour_duplicates += 1

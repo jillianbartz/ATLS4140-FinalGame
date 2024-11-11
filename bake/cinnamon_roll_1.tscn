@@ -17,8 +17,8 @@ shader_parameter/flash = 0.0
 script = ExtResource("1_u0kvi")
 
 [node name="Chef" type="CharacterBody2D" parent="." groups=["Chef"]]
-position = Vector2(62, 285)
-scale = Vector2(2.84903, 4.45325)
+position = Vector2(64, 288)
+scale = Vector2(2.19403, 2.54766)
 script = ExtResource("1_jkxph")
 
 [node name="ChefCollision" type="CollisionShape2D" parent="Chef"]

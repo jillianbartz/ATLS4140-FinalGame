@@ -22,8 +22,6 @@ Global="*res://global.gd"
 [global_group]
 
 Chef=""
-GoodCircles=""
-BadCircles=""
 
 [input]
 

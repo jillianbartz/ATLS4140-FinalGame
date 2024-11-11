@@ -1,17 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvyno0rccdj3t"]
+[gd_scene load_steps=5 format=3 uid="uid://cvyno0rccdj3t"]
 
+[ext_resource type="Script" path="res://butter.gd" id="1_bwuiv"]
 [ext_resource type="Texture2D" path="res://assets/butter-circle.png" id="1_s7ik0"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1gj8t"]
-radius = 8.12555
-height = 20.86
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23nrk"]
-radius = 6.37842
-height = 16.5945
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvxv6"]
-size = Vector2(72, 140.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu635"]
 size = Vector2(76, 55)
@@ -19,84 +9,70 @@ size = Vector2(76, 55)
 [sub_resource type="CanvasTexture" id="CanvasTexture_jywfy"]
 
 [node name="Butter" type="Node2D"]
+script = ExtResource("1_bwuiv")
 
-[node name="ButterCircle1" type="CharacterBody2D" parent="."]
-position = Vector2(-537, -10)
-scale = Vector2(1.53803, 1.18936)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(768, 325)
+scale = Vector2(1.81592, 2.17629)
 
-[node name="Sprite2D" type="Sprite2D" parent="ButterCircle1"]
-position = Vector2(806, 303)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-0.999878, -2)
+scale = Vector2(33.6957, 33.3719)
+build_mode = 1
+polygon = PackedVector2Array(-8.91461, -3.12413, -6.92715, -7.20565, -3.35745, -9.87628, -9.53674e-07, -10.0778, 3.18379, -9.54875, 6.2711, -7.38201, 8.47081, -2.72101, 8.58658, 2.56985, 7.21659, 6.0467, 4.36083, 8.99446, 1.25422, 10.103, -2.2383, 10.0778, -4.63097, 9.09524, -8.16208, 5.41683, -9.33912, 1.48648, -7.52532, 1.46129, -6.44476, 5.16489, -2.79788, 8.23863, 2.37337, 8.13785, 5.49927, 5.1145, 6.84997, 1.43609, 6.50265, -3.90516, 2.87506, -7.48279, -0.81042, -8.51577, -4.43801, -7.10487, -7.10082, -2.74621)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-5, -3.05176e-05)
 scale = Vector2(5.6069, 6.74595)
 texture = ExtResource("1_s7ik0")
 
-[node name="BadCircle" type="CollisionShape2D" parent="ButterCircle1" groups=["BadCircles"]]
-position = Vector2(811, 303)
-scale = Vector2(-36.0591, 34.2281)
-shape = SubResource("CapsuleShape2D_1gj8t")
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(851, 329)
+scale = Vector2(1.36896, 1.51618)
 
-[node name="GoodCircle" type="CollisionShape2D" parent="ButterCircle1" groups=["GoodCircles"]]
-position = Vector2(814, 302)
-scale = Vector2(-36.0591, 34.2281)
-shape = SubResource("CapsuleShape2D_23nrk")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
+position = Vector2(1.90735e-06, 1.22654)
+scale = Vector2(33.6957, 33.3719)
+build_mode = 1
+polygon = PackedVector2Array(-8.91461, -3.12413, -6.92715, -7.20565, -3.35745, -9.87628, -9.53674e-07, -10.0778, 3.18379, -9.54875, 6.2711, -7.38201, 8.47081, -2.72101, 8.58658, 2.56985, 7.21659, 6.0467, 4.36083, 8.99446, 1.25422, 10.103, -2.2383, 10.0778, -4.63097, 9.09524, -8.16208, 5.41683, -9.33912, 1.48648, -7.52532, 1.46129, -6.44476, 5.16489, -2.79788, 8.23863, 2.37337, 8.13785, 5.49927, 5.1145, 6.84997, 1.43609, 6.50265, -3.90516, 2.87506, -7.48279, -0.81042, -8.51577, -4.43801, -7.10487, -7.10082, -2.74621)
 
-[node name="GoodRectangle" type="CollisionShape2D" parent="ButterCircle1" groups=["GoodCircles"]]
-position = Vector2(548, 281)
-shape = SubResource("RectangleShape2D_lvxv6")
-
-[node name="ButterCircle2" type="CharacterBody2D" parent="."]
-position = Vector2(-81, 97)
-scale = Vector2(0.999382, 0.815295)
-
-[node name="Sprite2D" type="Sprite2D" parent="ButterCircle2"]
-position = Vector2(806, 303)
+[node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
+position = Vector2(-15.0093, 2.45309)
 scale = Vector2(5.6069, 6.74595)
 texture = ExtResource("1_s7ik0")
 
-[node name="BadCircle" type="CollisionShape2D" parent="ButterCircle2" groups=["BadCircles"]]
-position = Vector2(811, 303)
-scale = Vector2(-36.0591, 34.2281)
-shape = SubResource("CapsuleShape2D_1gj8t")
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(857, 331)
+scale = Vector2(0.854495, 1.06682)
 
-[node name="GoodCircle" type="CollisionShape2D" parent="ButterCircle2" groups=["GoodCircles"]]
-position = Vector2(814, 302)
-scale = Vector2(-36.0591, 34.2281)
-shape = SubResource("CapsuleShape2D_23nrk")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+position = Vector2(5.77743, 12.3748)
+scale = Vector2(33.6957, 33.3719)
+build_mode = 1
+polygon = PackedVector2Array(-8.91461, -3.12413, -6.92715, -7.20565, -3.35745, -9.87628, -9.53674e-07, -10.0778, 3.18379, -9.54875, 6.2711, -7.38201, 8.47081, -2.72101, 8.58658, 2.56985, 7.21659, 6.0467, 4.36083, 8.99446, 1.25422, 10.103, -2.2383, 10.0778, -4.63097, 9.09524, -8.16208, 5.41683, -9.33912, 1.48648, -7.52532, 1.46129, -6.44476, 5.16489, -2.79788, 8.23863, 2.37337, 8.13785, 5.49927, 5.1145, 6.84997, 1.43609, 6.50265, -3.90516, 2.87506, -7.48279, -0.81042, -8.51577, -4.43801, -7.10487, -7.10082, -2.74621)
 
-[node name="GoodRectangle" type="CollisionShape2D" parent="ButterCircle2" groups=["GoodCircles"]]
-position = Vector2(548, 281)
-shape = SubResource("RectangleShape2D_lvxv6")
-
-[node name="ButterCircle3" type="CharacterBody2D" parent="."]
-position = Vector2(207, 231)
-scale = Vector2(0.649276, 0.361759)
-
-[node name="Sprite2D" type="Sprite2D" parent="ButterCircle3"]
-position = Vector2(806, 303)
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+position = Vector2(-9.24103, 5.52853)
 scale = Vector2(5.6069, 6.74595)
 texture = ExtResource("1_s7ik0")
 
-[node name="BadCircle" type="CollisionShape2D" parent="ButterCircle3" groups=["BadCircles"]]
-position = Vector2(811, 303)
-scale = Vector2(-36.0591, 34.2281)
-shape = SubResource("CapsuleShape2D_1gj8t")
-
-[node name="GoodCircle" type="CollisionShape2D" parent="ButterCircle3" groups=["GoodCircles"]]
-position = Vector2(814, 302)
-scale = Vector2(-36.0591, 34.2281)
-shape = SubResource("CapsuleShape2D_23nrk")
-
-[node name="GoodRectangle" type="CollisionShape2D" parent="ButterCircle3" groups=["GoodCircles"]]
-position = Vector2(548, 281)
-shape = SubResource("RectangleShape2D_lvxv6")
-
-[node name="Butter" type="CharacterBody2D" parent="."]
-position = Vector2(-83, 34)
+[node name="Butter" type="Area2D" parent="."]
+position = Vector2(767, 325)
 
 [node name="ButterCollision" type="CollisionShape2D" parent="Butter"]
-position = Vector2(810, 305)
+position = Vector2(-0.817444, -0.72876)
 shape = SubResource("RectangleShape2D_iu635")
 
 [node name="Sprite2D" type="Sprite2D" parent="Butter"]
-position = Vector2(814, 307)
-scale = Vector2(-80.3651, -50.5425)
+position = Vector2(3.18256, 1.27124)
+rotation = -3.14159
+scale = Vector2(80.3651, 50.5425)
 texture = SubResource("CanvasTexture_jywfy")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Butter" to="." method="_on_butter_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

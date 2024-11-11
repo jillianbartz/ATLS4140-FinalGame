@@ -31,8 +31,12 @@ func spawn_flour():
 	spawned = true
 
 func spawn_butter():
-	var new_butter = butter.instantiate()
-	add_child(new_butter)
+	var butter_duplicates = 0
+	while(butter_duplicates < 2):
+		var new_butter = butter.instantiate()
+		add_child(new_butter)
+		butter_duplicates += 1
+	spawned = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -43,6 +47,8 @@ func _process(delta: float) -> void:
 				spawn_eggs()
 			if(Global.egg_score >= 2):
 				spawned = false
+				$Chef.global_position.x = 64
+				$Chef.global_position.y = 288
 				state = States.FLOUR
 		States.FLOUR:
 			$Score.text = str(Global.flour_score) + "/20"
@@ -50,10 +56,13 @@ func _process(delta: float) -> void:
 				spawn_flour()
 			if(Global.flour_score >= 20):
 				spawned = false
+				$Chef.global_position.x = 64
+				$Chef.global_position.y = 288
 				state = States.BUTTER
 		States.BUTTER:
-			$Score.text = str(Global.butter_score) + "/5"
+			$Score.text = str(Global.butter_score) + "/1"
 			if(!spawned):
 				spawn_butter()
-			if(Global.egg_score >= 5):
+			if(Global.butter_score >= 1):
 				print("finished scene")
+				queue_free()

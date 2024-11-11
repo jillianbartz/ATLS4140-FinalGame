@@ -6,6 +6,7 @@ var state: States = States.EGG
 
 var egg = preload("res://egg.tscn")
 var flour = preload("res://flour.tscn")
+var butter = preload("res://butter.tscn")
 
 var spawned: bool = false
 
@@ -29,6 +30,10 @@ func spawn_flour():
 		flour_duplicates += 1
 	spawned = true
 
+func spawn_butter():
+	var new_butter = butter.instantiate()
+	add_child(new_butter)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	match state:
@@ -47,6 +52,8 @@ func _process(delta: float) -> void:
 				spawned = false
 				state = States.BUTTER
 		States.BUTTER:
-			$Score.text = str(Global.flour_score) + "/5"
+			$Score.text = str(Global.butter_score) + "/5"
+			if(!spawned):
+				spawn_butter()
 			if(Global.egg_score >= 5):
 				print("finished scene")

@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvyno0rccdj3t"]
+
+[ext_resource type="Texture2D" path="res://assets/butter-circle.png" id="1_s7ik0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1gj8t"]
+radius = 8.12555
+height = 20.86
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_23nrk"]
+radius = 6.37842
+height = 16.5945
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvxv6"]
+size = Vector2(72, 140.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iu635"]
+size = Vector2(76, 55)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jywfy"]
+
+[node name="Butter" type="Node2D"]
+
+[node name="ButterCircle1" type="CharacterBody2D" parent="."]
+position = Vector2(-537, -10)
+scale = Vector2(1.53803, 1.18936)
+
+[node name="Sprite2D" type="Sprite2D" parent="ButterCircle1"]
+position = Vector2(806, 303)
+scale = Vector2(5.6069, 6.74595)
+texture = ExtResource("1_s7ik0")
+
+[node name="BadCircle" type="CollisionShape2D" parent="ButterCircle1" groups=["BadCircles"]]
+position = Vector2(811, 303)
+scale = Vector2(-36.0591, 34.2281)
+shape = SubResource("CapsuleShape2D_1gj8t")
+
+[node name="GoodCircle" type="CollisionShape2D" parent="ButterCircle1" groups=["GoodCircles"]]
+position = Vector2(814, 302)
+scale = Vector2(-36.0591, 34.2281)
+shape = SubResource("CapsuleShape2D_23nrk")
+
+[node name="GoodRectangle" type="CollisionShape2D" parent="ButterCircle1" groups=["GoodCircles"]]
+position = Vector2(548, 281)
+shape = SubResource("RectangleShape2D_lvxv6")
+
+[node name="ButterCircle2" type="CharacterBody2D" parent="."]
+position = Vector2(-81, 97)
+scale = Vector2(0.999382, 0.815295)
+
+[node name="Sprite2D" type="Sprite2D" parent="ButterCircle2"]
+position = Vector2(806, 303)
+scale = Vector2(5.6069, 6.74595)
+texture = ExtResource("1_s7ik0")
+
+[node name="BadCircle" type="CollisionShape2D" parent="ButterCircle2" groups=["BadCircles"]]
+position = Vector2(811, 303)
+scale = Vector2(-36.0591, 34.2281)
+shape = SubResource("CapsuleShape2D_1gj8t")
+
+[node name="GoodCircle" type="CollisionShape2D" parent="ButterCircle2" groups=["GoodCircles"]]
+position = Vector2(814, 302)
+scale = Vector2(-36.0591, 34.2281)
+shape = SubResource("CapsuleShape2D_23nrk")
+
+[node name="GoodRectangle" type="CollisionShape2D" parent="ButterCircle2" groups=["GoodCircles"]]
+position = Vector2(548, 281)
+shape = SubResource("RectangleShape2D_lvxv6")
+
+[node name="ButterCircle3" type="CharacterBody2D" parent="."]
+position = Vector2(207, 231)
+scale = Vector2(0.649276, 0.361759)
+
+[node name="Sprite2D" type="Sprite2D" parent="ButterCircle3"]
+position = Vector2(806, 303)
+scale = Vector2(5.6069, 6.74595)
+texture = ExtResource("1_s7ik0")
+
+[node name="BadCircle" type="CollisionShape2D" parent="ButterCircle3" groups=["BadCircles"]]
+position = Vector2(811, 303)
+scale = Vector2(-36.0591, 34.2281)
+shape = SubResource("CapsuleShape2D_1gj8t")
+
+[node name="GoodCircle" type="CollisionShape2D" parent="ButterCircle3" groups=["GoodCircles"]]
+position = Vector2(814, 302)
+scale = Vector2(-36.0591, 34.2281)
+shape = SubResource("CapsuleShape2D_23nrk")
+
+[node name="GoodRectangle" type="CollisionShape2D" parent="ButterCircle3" groups=["GoodCircles"]]
+position = Vector2(548, 281)
+shape = SubResource("RectangleShape2D_lvxv6")
+
+[node name="Butter" type="CharacterBody2D" parent="."]
+position = Vector2(-83, 34)
+
+[node name="ButterCollision" type="CollisionShape2D" parent="Butter"]
+position = Vector2(810, 305)
+shape = SubResource("RectangleShape2D_iu635")
+
+[node name="Sprite2D" type="Sprite2D" parent="Butter"]
+position = Vector2(814, 307)
+scale = Vector2(-80.3651, -50.5425)
+texture = SubResource("CanvasTexture_jywfy")

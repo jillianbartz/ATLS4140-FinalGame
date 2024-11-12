@@ -13,9 +13,9 @@ shader_parameter/scale = 1.0
 shader_parameter/mod_color = Color(0.588235, 0, 0, 1)
 shader_parameter/flash = 0.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8dqpr"]
-
 [sub_resource type="CanvasTexture" id="CanvasTexture_5legi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dqpr"]
 
 [node name="CinnamonRoll2" type="Node2D"]
 scale = Vector2(1, 1.0019)
@@ -38,14 +38,19 @@ texture = ExtResource("3_guiwl")
 position = Vector2(0.455786, 0.960945)
 scale = Vector2(1.59524, 1.41742)
 
-[node name="BlockCollision" type="CollisionShape2D" parent="Chef/Block"]
-shape = SubResource("CircleShape2D_8dqpr")
-
 [node name="BlockSprite" type="Sprite2D" parent="Chef/Block"]
-position = Vector2(5.42857, -0.552796)
-scale = Vector2(7.25006, -13.2468)
+position = Vector2(5.42857, -0.552795)
+scale = Vector2(7.25007, -13.2468)
 texture = SubResource("CanvasTexture_5legi")
+
+[node name="BlockCollision" type="CollisionShape2D" parent="Chef/Block"]
+scale = Vector2(1.21766, 1.27207)
+shape = SubResource("CircleShape2D_8dqpr")
 
 [node name="ProjectileTimer" type="Timer" parent="."]
 
+[node name="ClickTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Chef/Block" to="." method="_on_block_body_entered"]
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
+[connection signal="timeout" from="ClickTimer" to="." method="_on_click_timer_timeout"]

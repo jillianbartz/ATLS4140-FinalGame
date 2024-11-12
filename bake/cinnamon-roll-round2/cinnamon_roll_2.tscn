@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://8dmi10swk8dc"]
+[gd_scene load_steps=9 format=3 uid="uid://8dmi10swk8dc"]
 
+[ext_resource type="Script" path="res://cinnamon-roll-round2/cinnamon_roll_2.gd" id="1_8d2qf"]
 [ext_resource type="Script" path="res://chef.gd" id="1_yy0yj"]
 [ext_resource type="Shader" path="res://test.gdshader" id="2_kphbj"]
 [ext_resource type="Texture2D" uid="uid://jrlpr7ek2qv" path="res://icon.svg" id="3_guiwl"]
@@ -12,8 +13,13 @@ shader_parameter/scale = 1.0
 shader_parameter/mod_color = Color(0.588235, 0, 0, 1)
 shader_parameter/flash = 0.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_8dqpr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5legi"]
+
 [node name="CinnamonRoll2" type="Node2D"]
 scale = Vector2(1, 1.0019)
+script = ExtResource("1_8d2qf")
 
 [node name="Chef" type="CharacterBody2D" parent="." groups=["Chef"]]
 position = Vector2(64, 288)
@@ -27,3 +33,19 @@ shape = SubResource("RectangleShape2D_sp6us")
 material = SubResource("ShaderMaterial_m8x5b")
 scale = Vector2(0.175286, 0.161678)
 texture = ExtResource("3_guiwl")
+
+[node name="Block" type="Area2D" parent="Chef"]
+position = Vector2(0.455786, 0.960945)
+scale = Vector2(1.59524, 1.41742)
+
+[node name="BlockCollision" type="CollisionShape2D" parent="Chef/Block"]
+shape = SubResource("CircleShape2D_8dqpr")
+
+[node name="BlockSprite" type="Sprite2D" parent="Chef/Block"]
+position = Vector2(5.42857, -0.552796)
+scale = Vector2(7.25006, -13.2468)
+texture = SubResource("CanvasTexture_5legi")
+
+[node name="ProjectileTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]

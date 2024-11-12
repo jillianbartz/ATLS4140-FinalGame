@@ -1,11 +1,10 @@
 extends Node2D
 
+var velocity: Vector2 = Vector2(0,0)
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func fire(forward: Vector2, speed: float):
+	forward = (forward - global_position).normalized()
+	velocity = forward * speed
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position.x -= 3
+	position += velocity * delta

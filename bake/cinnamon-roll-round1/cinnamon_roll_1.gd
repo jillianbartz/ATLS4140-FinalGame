@@ -64,5 +64,4 @@ func _process(delta: float) -> void:
 			if(!spawned):
 				spawn_butter()
 			if(Global.butter_score >= 1):
-				print("finished scene")
-				queue_free()
+				get_tree().change_scene_to_file("res://cinnamon-roll-round2/cinnamon_roll_2.tscn")

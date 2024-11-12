@@ -27,6 +27,14 @@ position = Vector2(64, 288)
 scale = Vector2(2.19403, 2.54766)
 script = ExtResource("1_yy0yj")
 
+[node name="ChefHealth" type="ProgressBar" parent="Chef"]
+offset_left = -24.1565
+offset_top = -21.7619
+offset_right = 5534.84
+offset_bottom = 1617.24
+scale = Vector2(0.0118894, 0.00537643)
+theme_override_font_sizes/font_size = 1200
+
 [node name="ChefCollision" type="CollisionShape2D" parent="Chef"]
 scale = Vector2(1.05788, 0.958863)
 shape = SubResource("RectangleShape2D_sp6us")
@@ -47,7 +55,7 @@ scale = Vector2(7.25007, -13.2468)
 texture = SubResource("CanvasTexture_5legi")
 
 [node name="BlockCollision" type="CollisionShape2D" parent="Chef/Block"]
-position = Vector2(9.14286, -0.552796)
+position = Vector2(5.71428, -0.552796)
 scale = Vector2(0.571418, 0.961779)
 shape = SubResource("RectangleShape2D_fmq5h")
 

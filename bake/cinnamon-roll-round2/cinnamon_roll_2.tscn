@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://8dmi10swk8dc"]
+
+[ext_resource type="Script" path="res://chef.gd" id="1_yy0yj"]
+[ext_resource type="Shader" path="res://test.gdshader" id="2_kphbj"]
+[ext_resource type="Texture2D" uid="uid://jrlpr7ek2qv" path="res://icon.svg" id="3_guiwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp6us"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m8x5b"]
+shader = ExtResource("2_kphbj")
+shader_parameter/scale = 1.0
+shader_parameter/mod_color = Color(0.588235, 0, 0, 1)
+shader_parameter/flash = 0.0
+
+[node name="CinnamonRoll2" type="Node2D"]
+scale = Vector2(1, 1.0019)
+
+[node name="Chef" type="CharacterBody2D" parent="." groups=["Chef"]]
+position = Vector2(64, 288)
+scale = Vector2(2.19403, 2.54766)
+script = ExtResource("1_yy0yj")
+
+[node name="ChefCollision" type="CollisionShape2D" parent="Chef"]
+shape = SubResource("RectangleShape2D_sp6us")
+
+[node name="ChefSprite" type="Sprite2D" parent="Chef"]
+material = SubResource("ShaderMaterial_m8x5b")
+scale = Vector2(0.175286, 0.161678)
+texture = ExtResource("3_guiwl")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b02fjku13i5si"]
+
+[ext_resource type="Script" path="res://cinnamon-roll-round2/dough_projectile.gd" id="1_qnefc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pimma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64q2j"]
+
+[node name="DoughProjectile" type="Node2D"]
+script = ExtResource("1_qnefc")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2.58462, 2.43137)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(19.7972, 19.7894)
+texture = SubResource("CanvasTexture_pimma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_64q2j")

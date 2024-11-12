@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmwhuh50odin6"]
 
-[ext_resource type="Script" path="res://egg.gd" id="1_r1hxk"]
+[ext_resource type="Script" path="res://cinnamon-roll-round1/egg.gd" id="1_r1hxk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8kmr"]
 

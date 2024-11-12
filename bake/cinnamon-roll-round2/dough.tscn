@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0i4rkqnie1tp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8o5f5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oefpn"]
+size = Vector2(64, 93)
+
+[node name="Dough" type="Node2D"]
+
+[node name="DoughArea" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="DoughArea"]
+position = Vector2(916, 300)
+scale = Vector2(63.8805, 93.9497)
+texture = SubResource("CanvasTexture_8o5f5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoughArea"]
+position = Vector2(916, 299.5)
+shape = SubResource("RectangleShape2D_oefpn")

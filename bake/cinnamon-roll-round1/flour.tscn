@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2u55416c76dk"]
 
-[ext_resource type="Script" path="res://flour.gd" id="1_r11gs"]
+[ext_resource type="Script" path="res://cinnamon-roll-round1/flour.gd" id="1_r11gs"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uqo4j"]
 

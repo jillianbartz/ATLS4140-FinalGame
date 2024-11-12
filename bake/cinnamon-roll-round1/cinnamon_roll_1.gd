@@ -4,9 +4,9 @@ enum States {EGG, FLOUR, BUTTER}
 
 var state: States = States.EGG
 
-var egg = preload("res://egg.tscn")
-var flour = preload("res://flour.tscn")
-var butter = preload("res://butter.tscn")
+var egg = preload("res://cinnamon-roll-round1/egg.tscn")
+var flour = preload("res://cinnamon-roll-round1/flour.tscn")
+var butter = preload("res://cinnamon-roll-round1/butter.tscn")
 
 var spawned: bool = false
 

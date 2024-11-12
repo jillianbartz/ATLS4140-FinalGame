@@ -15,7 +15,8 @@ shader_parameter/flash = 0.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5legi"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8dqpr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmq5h"]
+size = Vector2(15.2537, 14.7681)
 
 [node name="CinnamonRoll2" type="Node2D"]
 scale = Vector2(1, 1.0019)
@@ -27,6 +28,7 @@ scale = Vector2(2.19403, 2.54766)
 script = ExtResource("1_yy0yj")
 
 [node name="ChefCollision" type="CollisionShape2D" parent="Chef"]
+scale = Vector2(1.05788, 0.958863)
 shape = SubResource("RectangleShape2D_sp6us")
 
 [node name="ChefSprite" type="Sprite2D" parent="Chef"]
@@ -34,9 +36,10 @@ material = SubResource("ShaderMaterial_m8x5b")
 scale = Vector2(0.175286, 0.161678)
 texture = ExtResource("3_guiwl")
 
-[node name="Block" type="Area2D" parent="Chef"]
-position = Vector2(0.455786, 0.960945)
+[node name="Block" type="Area2D" parent="Chef" groups=["Chef"]]
+position = Vector2(-2.27891, 0.569172)
 scale = Vector2(1.59524, 1.41742)
+collision_mask = 2
 
 [node name="BlockSprite" type="Sprite2D" parent="Chef/Block"]
 position = Vector2(5.42857, -0.552795)
@@ -44,13 +47,17 @@ scale = Vector2(7.25007, -13.2468)
 texture = SubResource("CanvasTexture_5legi")
 
 [node name="BlockCollision" type="CollisionShape2D" parent="Chef/Block"]
-scale = Vector2(1.21766, 1.27207)
-shape = SubResource("CircleShape2D_8dqpr")
+position = Vector2(9.14286, -0.552796)
+scale = Vector2(0.571418, 0.961779)
+shape = SubResource("RectangleShape2D_fmq5h")
 
 [node name="ProjectileTimer" type="Timer" parent="."]
 
 [node name="ClickTimer" type="Timer" parent="."]
 
+[connection signal="area_entered" from="Chef/Block" to="." method="_on_block_area_entered"]
+[connection signal="area_exited" from="Chef/Block" to="." method="_on_block_area_exited"]
 [connection signal="body_entered" from="Chef/Block" to="." method="_on_block_body_entered"]
+[connection signal="body_exited" from="Chef/Block" to="." method="_on_block_body_exited"]
 [connection signal="timeout" from="ProjectileTimer" to="." method="_on_projectile_timer_timeout"]
 [connection signal="timeout" from="ClickTimer" to="." method="_on_click_timer_timeout"]

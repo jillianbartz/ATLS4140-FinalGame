@@ -11,10 +11,9 @@ position = Vector2(874, 328)
 scale = Vector2(0.477419, 0.444444)
 script = ExtResource("1_qnefc")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Dough_Projectile"]]
 scale = Vector2(2.58462, 2.43137)
-collision_layer = 0
-collision_mask = 0
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 scale = Vector2(19.7972, 19.7894)
@@ -25,4 +24,5 @@ shape = SubResource("RectangleShape2D_64q2j")
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

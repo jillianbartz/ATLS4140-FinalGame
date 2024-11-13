@@ -12,6 +12,7 @@ var spawned: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Chef/ChefSprite/AnimationPlayer.play("Idle")
 	state = States.EGG
 
 func spawn_eggs():

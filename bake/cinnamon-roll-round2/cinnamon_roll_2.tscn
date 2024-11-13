@@ -1,17 +1,104 @@
-[gd_scene load_steps=9 format=3 uid="uid://8dmi10swk8dc"]
+[gd_scene load_steps=12 format=3 uid="uid://8dmi10swk8dc"]
 
 [ext_resource type="Script" path="res://cinnamon-roll-round2/cinnamon_roll_2.gd" id="1_8d2qf"]
 [ext_resource type="Script" path="res://chef.gd" id="1_yy0yj"]
 [ext_resource type="Shader" path="res://test.gdshader" id="2_kphbj"]
-[ext_resource type="Texture2D" uid="uid://jrlpr7ek2qv" path="res://icon.svg" id="3_guiwl"]
+[ext_resource type="Texture2D" uid="uid://cd7mkhx3ylvgi" path="res://assets/chef-idle.png" id="4_vdaxf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sp6us"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxhcc"]
+size = Vector2(19.3137, 22.5545)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m8x5b"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0wbam"]
 shader = ExtResource("2_kphbj")
 shader_parameter/scale = 1.0
 shader_parameter/mod_color = Color(0.588235, 0, 0, 1)
 shader_parameter/flash = 0.0
+
+[sub_resource type="Animation" id="Animation_2l8vv"]
+resource_name = "Idle"
+length = 0.900003
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_pqp06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkkac"]
+_data = {
+"Idle": SubResource("Animation_2l8vv"),
+"RESET": SubResource("Animation_pqp06")
+}
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5legi"]
 
@@ -27,6 +114,23 @@ position = Vector2(64, 288)
 scale = Vector2(2.19403, 2.54766)
 script = ExtResource("1_yy0yj")
 
+[node name="ChefCollision2" type="CollisionShape2D" parent="Chef"]
+position = Vector2(-4.22747, -0.493597)
+scale = Vector2(1.12555, 1.15681)
+shape = SubResource("RectangleShape2D_gxhcc")
+
+[node name="ChefSprite2" type="Sprite2D" parent="Chef"]
+material = SubResource("ShaderMaterial_0wbam")
+position = Vector2(-0.194961, -0.00854253)
+scale = Vector2(0.253331, 0.223588)
+texture = ExtResource("4_vdaxf")
+hframes = 14
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Chef/ChefSprite2"]
+libraries = {
+"": SubResource("AnimationLibrary_qkkac")
+}
+
 [node name="ChefHealth" type="ProgressBar" parent="Chef"]
 offset_left = -24.1565
 offset_top = -21.7619
@@ -34,15 +138,6 @@ offset_right = 5534.84
 offset_bottom = 1617.24
 scale = Vector2(0.0118894, 0.00537643)
 theme_override_font_sizes/font_size = 1200
-
-[node name="ChefCollision" type="CollisionShape2D" parent="Chef"]
-scale = Vector2(1.05788, 0.958863)
-shape = SubResource("RectangleShape2D_sp6us")
-
-[node name="ChefSprite" type="Sprite2D" parent="Chef"]
-material = SubResource("ShaderMaterial_m8x5b")
-scale = Vector2(0.175286, 0.161678)
-texture = ExtResource("3_guiwl")
 
 [node name="Block" type="Area2D" parent="Chef" groups=["Chef"]]
 position = Vector2(-2.27891, 0.569172)

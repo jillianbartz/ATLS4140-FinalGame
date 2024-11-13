@@ -1,23 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2u55416c76dk"]
 
 [ext_resource type="Script" path="res://cinnamon-roll-round1/flour.gd" id="1_r11gs"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_uqo4j"]
+[ext_resource type="Texture2D" uid="uid://c713o0l0p44vg" path="res://assets/flour_particles.png" id="2_o56l7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_58map"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tabbi"]
 
 [node name="Flour" type="Node2D"]
+scale = Vector2(0.998506, 0.998549)
 
 [node name="Flour" type="CharacterBody2D" parent="."]
 position = Vector2(639, 444)
-scale = Vector2(1.66402, 1.68793)
+scale = Vector2(0.932128, 0.822073)
 script = ExtResource("1_r11gs")
 
 [node name="FlourSprite" type="Sprite2D" parent="Flour"]
-scale = Vector2(15.3002, 16.3843)
-texture = SubResource("CanvasTexture_uqo4j")
+scale = Vector2(0.514709, 0.613383)
+texture = ExtResource("2_o56l7")
 
 [node name="FlourCollision" type="CollisionShape2D" parent="Flour"]
 scale = Vector2(1.19467, 1.21558)

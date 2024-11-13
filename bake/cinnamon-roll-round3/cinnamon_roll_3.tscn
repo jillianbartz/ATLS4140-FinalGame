@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://coqnm8ec1mhwx"]
+
+[ext_resource type="Script" path="res://cinnamon-roll-round3/cinnamon_roll_3.gd" id="1_k00jo"]
+[ext_resource type="Script" path="res://cinnamon-roll-round3/box.gd" id="2_1jyac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj41p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m2xyg"]
+specular_color = Color(0.792551, 0.00049979, 0.794201, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3j4p"]
+size = Vector2(28.5, 27.375)
+
+[node name="CinnamonRoll3" type="Node2D"]
+script = ExtResource("1_k00jo")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SpiralArea" type="Area2D" parent="."]
+position = Vector2(653, 355)
+scale = Vector2(1.76647, 1.55464)
+
+[node name="SpiralCollision" type="CollisionPolygon2D" parent="SpiralArea"]
+position = Vector2(-93, 46)
+scale = Vector2(0.741589, -1.22169)
+polygon = PackedVector2Array(86.3013, 134.241, 84.9528, 45.0198, 43.1506, -22.9192, -10.7876, -60.5721, -173.951, -62.2091, -269.691, -27.0118, -273.737, 48.2939, -242.722, 94.1322, -172.602, 137.515, -44.499, 142.426, 12.1362, 103.136, 5.39386, 57.2979, 2.697, 27.012, -72.817, -20.464, -164.512, -22.1006, -194.178, -6.54831, -206.314, 33.5602, -151.027, 96.5879, -52.5897, 105.592, -49.8928, 67.1204, -74.165, 32.7417, -88.998, 22.1006, -117.316, 41.7456, -84.9527, 56.4793, -79.5588, 76.9429, -142.936, 73.6687, -175.299, 34.3787, -160.466, -3.27417, -67.4227, 0, -18.8783, 40.1085, -17.53, 71.213, -13.4845, 90.8581, -53.9382, 124.418, -156.421, 122.781, -179.345, 104.773, -223.844, 76.9429, -245.419, 36.0158, -241.374, -16.3708, -163.163, -46.6568, -41.8021, -45.0197, 18.8785, -9.00394, 53.9383, 50.7496, 52.5898, 125.237, -21.5753, 171.075, -44.499, 171.894, -161.815, 170.257, -188.784, 163.708, -237.328, 148.975, -265.646, 104.773, -287.221, 101.499, -306.099, 101.499, -306.1, 58.116, -307.448, -17.189, -308.797, -31.923, -221.147, -76.943, -207.662, -85.947, -57.984, -86.765, 17.53, -63.028, 36.408, -63.028, 76.8621, -35.1973, 106.528, -17.1894, 157.769, 144.063, 22.9238, 211.184, -168.557, 219.369, -257.555, 189.083, -280.479, 179.261, -310.145, 124.418, -320.932, 115.414, -281.827, 114.596, -265.646, 166.164, -237.328, 167.801, -165.86, 189.902, -13.4845, 189.083)
+
+[node name="SpiralDrawing" type="Polygon2D" parent="."]
+position = Vector2(197.339, 229.889)
+scale = Vector2(1.30721, -1.9004)
+color = Color(1, 0.278431, 1, 1)
+polygon = PackedVector2Array(-86.3012, 0, -47.1959, 0, -14.833, 47.4754, 57.9836, 68.7575, 200.92, 68.7575, 276.434, 21.2821, 279.13, -51.5681, 240.025, -113.777, 182.042, -148.975, 59.3321, -150.612, -20.2268, -121.144, -24.2722, -67.1204, -2.6969, -27.0119, 72.8167, 20.4635, 167.209, 22.9192, 213.056, -12.2781, 204.965, -64.6647, 157.769, -104.773, 62.029, -107.229, 44.4991, -70.3945, 75.5135, -27.8304, 142.936, -24.5562, 138.891, -47.4754, 107.877, -63.0277, 133.497, -78.5799, 159.118, -60.572, 173.951, -24.5562, 168.557, 3.27417, 71.4682, -7.36687, 24.2722, -55.6608, 17.53, -71.2131, 32.363, -110.503, 59.3321, -123.6, 156.421, -122.781, 177.996, -119.507, 222.495, -75.3058, 231.935, -14.7337, 231.935, 1.63708, 177.996, 37.6529, 68.7713, 35.1973, 49.8929, 31.9231, -21.5753, -13.0967, -47.1959, -54.8423, -47.1959, -113.777, -44.499, -130.967, 48.5444, -162.89, 188.784, -163.708, 210.359, -162.89, 264.297, -125.237, 306.1, -58.1164, 307.448, 17.1894, 308.797, 31.9231, 221.147, 76.9429, 207.662, 85.9468, 57.9836, 86.7654, -17.5299, 63.0277, -36.4083, 63.0277, -59.332, 12.2781, -88.9981, 11.4596)
+
+[node name="Box" type="CharacterBody2D" parent="." groups=["Spiral_Box"]]
+position = Vector2(100, 220)
+scale = Vector2(0.6935, 0.555626)
+script = ExtResource("2_1jyac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_cj41p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Box"]
+scale = Vector2(19.4445, 20.5684)
+texture = SubResource("CanvasTexture_m2xyg")
+
+[node name="FinishArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
+position = Vector2(369, 353)
+shape = SubResource("RectangleShape2D_x3j4p")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="SpiralArea" to="." method="_on_spiral_area_area_entered"]
+[connection signal="body_entered" from="SpiralArea" to="." method="_on_spiral_area_body_entered"]
+[connection signal="input_event" from="SpiralArea" to="." method="_on_spiral_area_input_event"]
+[connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]

@@ -63,9 +63,11 @@ func _process(delta: float) -> void:
 	match state:
 		States.PROJECTILES:
 			if(!projectile_start):
+				new_dough.angy = true
 				throw_projectiles()
 		States.CLICK:
 			if(!click_start):
+				new_dough.angy = false
 				print("got here")
 				clicks()
 

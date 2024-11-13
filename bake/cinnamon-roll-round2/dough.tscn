@@ -1,8 +1,131 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0i4rkqnie1tp"]
+[gd_scene load_steps=8 format=3 uid="uid://b0i4rkqnie1tp"]
 
 [ext_resource type="Script" path="res://cinnamon-roll-round2/dough.gd" id="1_wd0xn"]
+[ext_resource type="Texture2D" uid="uid://di5v17ousryv1" path="res://assets/dough.png" id="2_u161s"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_8o5f5"]
+[sub_resource type="Animation" id="Animation_0v806"]
+resource_name = "Angy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_84f5x"]
+resource_name = "Vulnerable"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_gvdnj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_886k4"]
+_data = {
+"Angy": SubResource("Animation_0v806"),
+"RESET": SubResource("Animation_gvdnj"),
+"Vulnerable": SubResource("Animation_84f5x")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oefpn"]
 size = Vector2(64, 93)
@@ -13,9 +136,15 @@ script = ExtResource("1_wd0xn")
 [node name="DoughArea" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="DoughArea"]
-position = Vector2(916, 300)
-scale = Vector2(63.8805, 93.9497)
-texture = SubResource("CanvasTexture_8o5f5")
+position = Vector2(921, 299)
+scale = Vector2(0.67911, 0.749152)
+texture = ExtResource("2_u161s")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DoughArea/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_886k4")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoughArea"]
 position = Vector2(916, 299.5)

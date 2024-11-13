@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="bake"
-run/main_scene="res://cinnamon-roll-round3/cinnamon_roll_3.tscn"
+run/main_scene="res://menus/cinnamon-roll-menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 

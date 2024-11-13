@@ -27,11 +27,11 @@ func area1_rotation():
 
 func area2_rotation():
 	if(up2):
-		if($Area2D2.rotation >= deg_to_rad(30)):
+		if($Area2D2.rotation >= deg_to_rad(15)):
 			up2 = false
 		$Area2D2.rotation += deg_to_rad(2.5)
 	else:
-		if($Area2D2.rotation <= deg_to_rad(-30)):
+		if($Area2D2.rotation <= deg_to_rad(-15)):
 			up2 = true
 		$Area2D2.rotation -= deg_to_rad(2.5)
 
@@ -53,7 +53,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("restart!")
+	get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
 
 
 func _on_butter_body_entered(body: Node2D) -> void:

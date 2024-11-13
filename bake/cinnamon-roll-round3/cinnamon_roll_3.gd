@@ -16,4 +16,5 @@ func _on_timer_timeout() -> void:
 
 func _on_finish_area_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Spiral_Box")):
-		print("won!")
+		Global.croll_level3 = true
+		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")

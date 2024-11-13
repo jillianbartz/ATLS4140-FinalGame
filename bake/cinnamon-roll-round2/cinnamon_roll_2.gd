@@ -15,7 +15,7 @@ var parry_buffer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	$Chef/ChefSprite2/AnimationPlayer.play("Idle")
 	state = States.PROJECTILES
 	new_dough = dough.instantiate()
 	add_child(new_dough)
@@ -58,12 +58,19 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_released("Parry")):
 		$Chef/Block.visible = false
 		parry_buffer = 0
+	if(Global.dough_health <= 0):
+		Global.croll_level2 = true
+		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
+	if(Global.chef_health <= 0):
+		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
 	match state:
 		States.PROJECTILES:
 			if(!projectile_start):
+				new_dough.angy = true
 				throw_projectiles()
 		States.CLICK:
 			if(!click_start):
+				new_dough.angy = false
 				print("got here")
 				clicks()
 

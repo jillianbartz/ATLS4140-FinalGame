@@ -9,6 +9,7 @@ func _physics_process(delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$EggSprite/AnimationPlayer.play("Idle")
 	global_position.y = randf_range(0,650)
 	global_position.x = randf_range(1150, 4000)
 
@@ -20,5 +21,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Chef")):
 		print("egg")
+		$EggSprite/AnimationPlayer.play("Crack")
+		await $EggSprite/AnimationPlayer.animation_finished
 		Global.egg_score += 1
 		queue_free()

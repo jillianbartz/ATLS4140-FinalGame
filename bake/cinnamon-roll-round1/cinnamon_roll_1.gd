@@ -12,6 +12,7 @@ var spawned: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Chef/ChefSprite/AnimationPlayer.play("Idle")
 	state = States.EGG
 
 func spawn_eggs():
@@ -64,4 +65,5 @@ func _process(delta: float) -> void:
 			if(!spawned):
 				spawn_butter()
 			if(Global.butter_score >= 1):
-				get_tree().change_scene_to_file("res://cinnamon-roll-round2/cinnamon_roll_2.tscn")
+				Global.croll_level1 = true
+				get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")

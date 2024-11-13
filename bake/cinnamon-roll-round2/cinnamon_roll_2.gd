@@ -59,7 +59,10 @@ func _process(delta: float) -> void:
 		$Chef/Block.visible = false
 		parry_buffer = 0
 	if(Global.dough_health <= 0):
-		get_tree().change_scene_to_file("res://cinnamon-roll-round3/cinnamon_roll_3.tscn")
+		Global.croll_level2 = true
+		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
+	if(Global.chef_health <= 0):
+		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
 	match state:
 		States.PROJECTILES:
 			if(!projectile_start):

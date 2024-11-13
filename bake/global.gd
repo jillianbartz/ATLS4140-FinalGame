@@ -1,5 +1,9 @@
 extends Node
 
+var croll_level1 = false
+var croll_level2 = false
+var croll_level3 = false
+
 var egg_score = 0
 var flour_score = 0
 var butter_score = 0

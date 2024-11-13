@@ -11,8 +11,8 @@ size = Vector2(76, 55)
 script = ExtResource("1_bwuiv")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(768, 325)
-scale = Vector2(1.81592, 2.17629)
+position = Vector2(903, 342)
+scale = Vector2(2.25284, 2.68304)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(-0.999878, -2)
@@ -26,8 +26,8 @@ scale = Vector2(5.6069, 6.74595)
 texture = ExtResource("1_s7ik0")
 
 [node name="Area2D3" type="Area2D" parent="."]
-position = Vector2(851, 329)
-scale = Vector2(1.36896, 1.51618)
+position = Vector2(1047, 317)
+scale = Vector2(1.74128, 2.35705)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
 position = Vector2(2.92193, 2.63821)
@@ -41,8 +41,8 @@ scale = Vector2(5.6069, 6.74595)
 texture = ExtResource("1_s7ik0")
 
 [node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(857, 331)
-scale = Vector2(0.854495, 1.06682)
+position = Vector2(1068, 324)
+scale = Vector2(1.11573, 1.83692)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
 position = Vector2(5.77743, 12.3748)
@@ -56,7 +56,7 @@ scale = Vector2(5.6069, 6.74595)
 texture = ExtResource("1_s7ik0")
 
 [node name="Butter" type="Area2D" parent="."]
-position = Vector2(767, 325)
+position = Vector2(941, 323)
 
 [node name="ButterCollision" type="CollisionShape2D" parent="Butter"]
 position = Vector2(-0.817444, -0.72876)

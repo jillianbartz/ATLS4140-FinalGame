@@ -6,33 +6,37 @@
 script = ExtResource("1_wfjj2")
 
 [node name="Level 1" type="Button" parent="."]
-offset_left = 433.0
+offset_left = 476.0
 offset_top = 135.0
-offset_right = 587.0
+offset_right = 630.0
 offset_bottom = 166.0
+scale = Vector2(1.37027, 1.60207)
 text = "Gather Ingredients
 "
 
 [node name="Level 2" type="Button" parent="."]
-offset_left = 442.0
+offset_left = 484.0
 offset_top = 208.0
-offset_right = 571.0
+offset_right = 613.0
 offset_bottom = 239.0
+scale = Vector2(1.52862, 1.61267)
 text = "Beat the Dough"
 
 [node name="Level 3" type="Button" parent="."]
-offset_left = 438.0
-offset_top = 287.0
-offset_right = 584.0
-offset_bottom = 318.0
+offset_left = 482.0
+offset_top = 290.0
+offset_right = 628.0
+offset_bottom = 321.0
+scale = Vector2(1.38513, 1.71185)
 text = "Finishing Touches
 "
 
 [node name="Label" type="Label" parent="."]
-offset_left = 422.0
+offset_left = 466.0
 offset_top = 63.0
-offset_right = 596.0
+offset_right = 640.0
 offset_bottom = 86.0
+scale = Vector2(1.33164, 1.54103)
 text = "Make A Cinnamon Roll
 "
 

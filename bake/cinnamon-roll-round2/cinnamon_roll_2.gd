@@ -20,6 +20,7 @@ func _ready() -> void:
 	new_dough = dough.instantiate()
 	add_child(new_dough)
 	$Chef/Block.visible = false
+	Global.chef_health = 100
 
 func use_spawner():
 	var projectile = load("res://cinnamon-roll-round2/dough_projectile_spawner.gd").new()

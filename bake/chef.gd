@@ -3,7 +3,10 @@ extends CharacterBody2D
 @export var speed = 400
 
 func get_input():
-	var input_dir = Vector2(0, Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down").y)
+	var input_dir = Vector2(0,0)
+	if abs(get_global_mouse_position().y - global_position.y) > 5:
+		var y_pos = sign(get_global_mouse_position().y - global_position.y)
+		input_dir = Vector2(0, y_pos)
 	velocity = input_dir * speed
 
 func _physics_process(delta):

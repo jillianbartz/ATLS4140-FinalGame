@@ -15,7 +15,7 @@ scale = Vector2(2.58462, 2.43137)
 collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-scale = Vector2(0.383798, 0.382277)
+scale = Vector2(0.0392864, 0.0437483)
 texture = ExtResource("2_2kxbm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

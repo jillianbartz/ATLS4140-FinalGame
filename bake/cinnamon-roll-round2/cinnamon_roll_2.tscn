@@ -116,6 +116,7 @@ script = ExtResource("1_8d2qf")
 [node name="Chef" type="CharacterBody2D" parent="." groups=["Chef"]]
 position = Vector2(64, 288)
 scale = Vector2(2.19403, 2.54766)
+collision_mask = 4
 script = ExtResource("1_yy0yj")
 
 [node name="ChefCollision2" type="CollisionShape2D" parent="Chef"]

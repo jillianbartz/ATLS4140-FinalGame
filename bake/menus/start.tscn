@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://btovgtgxovgj2"]
+
+[ext_resource type="Texture2D" uid="uid://drw5kyqocxmg" path="res://assets/start.png" id="1_dbk3l"]
+[ext_resource type="Script" path="res://menus/start.gd" id="1_i5hxl"]
+
+[node name="Start" type="Node2D"]
+script = ExtResource("1_i5hxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 323)
+texture = ExtResource("1_dbk3l")
+
+[node name="Start" type="Button" parent="Sprite2D"]
+offset_left = -64.0
+offset_top = 53.0
+offset_right = -14.0
+offset_bottom = 84.0
+scale = Vector2(2.27385, 1.97248)
+text = "Start!
+"
+
+[connection signal="pressed" from="Sprite2D/Start" to="." method="_on_start_pressed"]

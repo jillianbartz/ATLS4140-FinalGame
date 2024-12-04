@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_tabbi"]
 
 [node name="Flour" type="Node2D"]
-scale = Vector2(0.998506, 0.998549)
+scale = Vector2(1.02473, 1.05363)
 
 [node name="Flour" type="CharacterBody2D" parent="."]
 position = Vector2(639, 444)
@@ -16,7 +16,7 @@ scale = Vector2(0.932128, 0.822073)
 script = ExtResource("1_r11gs")
 
 [node name="FlourSprite" type="Sprite2D" parent="Flour"]
-scale = Vector2(0.514709, 0.613383)
+scale = Vector2(0.071302, 0.078812)
 texture = ExtResource("2_o56l7")
 
 [node name="FlourCollision" type="CollisionShape2D" parent="Flour"]

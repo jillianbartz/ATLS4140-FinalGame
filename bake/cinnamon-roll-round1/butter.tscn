@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ckivh3ktgsokl" path="res://assets/butter.png" id="3_llyet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu635"]
-size = Vector2(76, 55)
+size = Vector2(100, 70)
 
 [node name="Butter" type="Node2D"]
 script = ExtResource("1_bwuiv")
@@ -59,13 +59,14 @@ texture = ExtResource("1_s7ik0")
 position = Vector2(941, 323)
 
 [node name="ButterCollision" type="CollisionShape2D" parent="Butter"]
-position = Vector2(-0.817444, -0.72876)
+position = Vector2(3, 6)
+scale = Vector2(1.023, 0.910712)
 shape = SubResource("RectangleShape2D_iu635")
 
 [node name="Sprite2D" type="Sprite2D" parent="Butter"]
 position = Vector2(3.18256, 1.27124)
 rotation = -3.14159
-scale = Vector2(-1.91018, -2.04759)
+scale = Vector2(-0.280484, -0.317329)
 texture = ExtResource("3_llyet")
 
 [node name="Timer" type="Timer" parent="."]

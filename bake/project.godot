@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="bake"
-run/main_scene="res://menus/cinnamon-roll-menu.tscn"
+run/main_scene="res://menus/start.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
@@ -23,6 +23,7 @@ Global="*res://global.gd"
 Chef=""
 Dough_Projectile=""
 Spiral_Box=""
+Boundary=""
 
 [input]
 
@@ -51,6 +52,7 @@ Parry={
 
 2d_physics/layer_1="Chef"
 2d_physics/layer_2="Projectiles"
+2d_physics/layer_3="Border"
 
 [rendering]
 

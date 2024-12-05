@@ -43,19 +43,19 @@ func spawn_butter():
 func _process(delta: float) -> void:
 	match state:
 		States.EGG:
-			$Score.text = str(Global.egg_score) + "/2"
+			$Score.text = str(Global.egg_score) + "/5"
 			if(!spawned):
 				spawn_eggs()
-			if(Global.egg_score >= 2):
+			if(Global.egg_score >= 5):
 				spawned = false
 				$Chef.global_position.x = 64
 				$Chef.global_position.y = 288
 				state = States.FLOUR
 		States.FLOUR:
-			$Score.text = str(Global.flour_score) + "/20"
+			$Score.text = str(Global.flour_score) + "/50"
 			if(!spawned):
 				spawn_flour()
-			if(Global.flour_score >= 20):
+			if(Global.flour_score >= 50):
 				spawned = false
 				$Chef.global_position.x = 64
 				$Chef.global_position.y = 288

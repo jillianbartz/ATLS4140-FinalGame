@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://mmgq1hpnsbww"]
+
+[ext_resource type="Script" path="res://tutorials/cr_1_tutorial.gd" id="1_nfstd"]
+
+[node name="CR-1-Tutorial" type="Node2D"]
+script = ExtResource("1_nfstd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 190.0
+offset_top = 126.0
+offset_right = 230.0
+offset_bottom = 149.0
+text = "Gather Ingredients:
+
+Move ↕ using mouse
+
+Collect the eggs, flour, and butter by smashing into them. 
+
+But be careful! If you run into any barriers or do not get enough materials by the end. You fail!"
+
+[node name="Confirm" type="Button" parent="."]
+offset_left = 196.0
+offset_top = 338.0
+offset_right = 252.0
+offset_bottom = 369.0
+text = "Got it!"
+
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

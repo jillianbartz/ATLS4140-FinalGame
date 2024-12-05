@@ -25,7 +25,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(Global.flour_score >= 20):
+	if(Global.flour_score >= 50):
 		queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

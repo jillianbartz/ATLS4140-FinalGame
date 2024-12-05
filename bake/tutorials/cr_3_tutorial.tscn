@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds8g6vtc7a1p5"]
+
+[ext_resource type="Script" path="res://tutorials/cr_3_tutorial.gd" id="1_4ffhf"]
+
+[node name="CR-3-Tutorial" type="Node2D"]
+script = ExtResource("1_4ffhf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 190.0
+offset_top = 126.0
+offset_right = 230.0
+offset_bottom = 149.0
+text = "Finishing Touches:
+
+Move ↕ using mouse
+
+[LEFT CLICK] to hold the icing pack
+
+Place icing on the cinnamon roll! Make sure to stay in the lines!
+"
+
+[node name="Confirm" type="Button" parent="."]
+offset_left = 195.0
+offset_top = 388.0
+offset_right = 251.0
+offset_bottom = 419.0
+text = "Got it!"
+
+[connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

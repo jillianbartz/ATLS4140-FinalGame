@@ -32,7 +32,7 @@ polygon = PackedVector2Array(-6.88217, -9.55065, -9.78137, -10.0091, -10.5683, -
 
 [node name="Box" type="CharacterBody2D" parent="." groups=["Spiral_Box"]]
 position = Vector2(737, 91)
-scale = Vector2(1.41731, 1.09659)
+scale = Vector2(1.31736, 0.944127)
 script = ExtResource("2_1jyac")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]

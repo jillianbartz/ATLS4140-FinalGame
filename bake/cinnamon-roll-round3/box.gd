@@ -18,6 +18,6 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if(reset):
 		is_dragging = false
-		global_position = Vector2(688, 49)
+		global_position = Vector2(737, 91)
 	elif(is_dragging):
 		global_position = get_global_mouse_position()

@@ -6,12 +6,13 @@ var angy = true
 func _process(delta: float) -> void:
 	$DoughHealth.value = Global.dough_health
 	if(angy):
-		$DoughArea/Sprite2D/AnimationPlayer.play("Angy")
+		$DoughArea/Sprite2D/AnimationPlayer.play("Attack")
 	else:
-		$DoughArea/Sprite2D/AnimationPlayer.play("Vulnerable")
+		$DoughArea/Sprite2D/AnimationPlayer.play("Idle")
 
 func _on_dough_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (Input.is_action_just_pressed("Attack") && can_be_hit):
 		print("Dough hit")
+		$DoughArea/Sprite2D/AnimationPlayer.play("Damage_Taken")
 		Global.attack_anim = true
 		Global.dough_health -= 1

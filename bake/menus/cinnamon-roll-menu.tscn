@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ojl4hf0cme4c"]
+[gd_scene load_steps=5 format=3 uid="uid://ojl4hf0cme4c"]
 
 [ext_resource type="Script" path="res://menus/cinnamon_roll_menu.gd" id="1_wfjj2"]
+[ext_resource type="FontFile" uid="uid://xhdw7p3vgq2d" path="res://assets/connection_ii/ConnectionII.otf" id="2_72rjb"]
 [ext_resource type="Texture2D" uid="uid://m4bko4t0n6p1" path="res://assets/menu.PNG" id="2_tpaox"]
 [ext_resource type="Texture2D" uid="uid://c8alnunex45q8" path="res://assets/CinnamonRollBLACKOUTLINE.png" id="3_htl82"]
 
@@ -14,6 +15,7 @@ offset_top = 253.0
 offset_right = 622.0
 offset_bottom = 284.0
 scale = Vector2(1.37027, 1.60207)
+theme_override_fonts/font = ExtResource("2_72rjb")
 text = "Gather Ingredients
 "
 
@@ -23,6 +25,7 @@ offset_top = 326.0
 offset_right = 605.0
 offset_bottom = 357.0
 scale = Vector2(1.52862, 1.61267)
+theme_override_fonts/font = ExtResource("2_72rjb")
 text = "Beat the Dough"
 
 [node name="Level 3" type="Button" parent="."]
@@ -31,6 +34,7 @@ offset_top = 408.0
 offset_right = 620.0
 offset_bottom = 439.0
 scale = Vector2(1.38513, 1.71185)
+theme_override_fonts/font = ExtResource("2_72rjb")
 text = "Finishing Touches
 "
 
@@ -40,6 +44,7 @@ offset_top = 181.0
 offset_right = 632.0
 offset_bottom = 204.0
 scale = Vector2(1.33164, 1.54103)
+theme_override_fonts/font = ExtResource("2_72rjb")
 text = "Make A Cinnamon Roll
 "
 

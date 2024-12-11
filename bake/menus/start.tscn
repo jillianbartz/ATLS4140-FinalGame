@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://btovgtgxovgj2"]
+[gd_scene load_steps=4 format=3 uid="uid://btovgtgxovgj2"]
 
 [ext_resource type="Texture2D" uid="uid://drw5kyqocxmg" path="res://assets/start.png" id="1_dbk3l"]
 [ext_resource type="Script" path="res://menus/start.gd" id="1_i5hxl"]
+[ext_resource type="FontFile" uid="uid://xhdw7p3vgq2d" path="res://assets/connection_ii/ConnectionII.otf" id="3_x3hl4"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_i5hxl")
@@ -16,6 +17,7 @@ offset_top = 53.0
 offset_right = -14.0
 offset_bottom = 84.0
 scale = Vector2(2.27385, 1.97248)
+theme_override_fonts/font = ExtResource("3_x3hl4")
 text = "Start!
 "
 

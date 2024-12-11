@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 func _on_dough_area_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (Input.is_action_just_pressed("Attack") && can_be_hit):
 		print("Dough hit")
+		Global.attack_anim = true
 		Global.dough_health -= 1

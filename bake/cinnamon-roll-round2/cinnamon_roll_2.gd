@@ -15,7 +15,7 @@ var parry_buffer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Chef/ChefSprite2/AnimationPlayer.play("Idle")
+	$Chef/ChefSprite/AnimationPlayer.play("Idle")
 	state = States.PROJECTILES
 	new_dough = dough.instantiate()
 	add_child(new_dough)
@@ -55,15 +55,20 @@ func _process(delta: float) -> void:
 	$Chef/ChefHealth.value = Global.chef_health
 	if(Input.is_action_pressed("Parry")):
 		$Chef/Block.visible = true
+		$Chef/ChefSprite/AnimationPlayer.play("Parry")
 		parry_buffer += 1
 	if(Input.is_action_just_released("Parry")):
+		$Chef/ChefSprite/AnimationPlayer.play("Idle")
 		$Chef/Block.visible = false
 		parry_buffer = 0
+	if(Global.attack_anim):
+		$Chef/ChefSprite/AnimationPlayer.play("Attack")
+		Global.attack_anim = false
 	if(Global.dough_health <= 0):
 		Global.croll_level2 = true
 		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
 	if(Global.chef_health <= 0):
-		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
+		$Chef/ChefSprite/AnimationPlayer.play("Death")
 	match state:
 		States.PROJECTILES:
 			if(!projectile_start):
@@ -81,9 +86,16 @@ func _on_block_area_entered(area: Area2D) -> void:
 		parry = true
 	else:
 		print("chef hit!")
+		$Chef/ChefSprite/AnimationPlayer.play("Damage")
 		parry = false
 
 
 func _on_block_area_exited(area: Area2D) -> void:
 	if(parry == false):
 		Global.chef_health -= 10
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if(anim_name == "Death"):
+		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
+	$Chef/ChefSprite/AnimationPlayer.play("Idle")

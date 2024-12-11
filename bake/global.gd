@@ -14,3 +14,5 @@ var y_up = false
 
 var chef_health = 100
 var dough_health = 100
+
+var attack_anim = false

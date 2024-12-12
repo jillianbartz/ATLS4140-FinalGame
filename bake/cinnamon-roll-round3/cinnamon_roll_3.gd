@@ -1,11 +1,12 @@
 extends Node2D
-#
-#var box = load("res://cinnamon-roll-round3/box.gd").new()
-#
-#func _ready():
-	#add_child(box)
+
+var box = load("res://cinnamon-roll-round3/box.gd").new()
+
+func _ready():
+	add_child(box)
 
 func _on_spiral_area_body_entered(body: Node2D) -> void:
+	print(body.name)
 	$Box.reset = true
 	print("ope")
 	$Timer.start(.5)

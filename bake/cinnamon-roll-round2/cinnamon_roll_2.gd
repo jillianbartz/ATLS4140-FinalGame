@@ -10,9 +10,6 @@ var new_dough = null
 var projectile_start = false
 var click_start = false
 
-var parry = false
-var parry_buffer = 0
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Chef/ChefSprite/AnimationPlayer.play("Idle")
@@ -53,14 +50,13 @@ func _on_click_timer_timeout() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Chef/ChefHealth.value = Global.chef_health
-	if(Input.is_action_pressed("Parry")):
-		$Chef/Block.visible = true
-		$Chef/ChefSprite/AnimationPlayer.play("Parry")
-		parry_buffer += 1
-	if(Input.is_action_just_released("Parry")):
-		$Chef/ChefSprite/AnimationPlayer.play("Idle")
-		$Chef/Block.visible = false
-		parry_buffer = 0
+	for body in $Chef/Block.get_overlapping_areas():
+		if(body.get_collision_layer() == 2 && Input.is_action_just_pressed("Parry")):
+			$Chef/Block.visible = true
+			$Chef/ChefSprite/AnimationPlayer.play("Parry")
+			body.queue_free()
+	for areas in $Chef/Hit.get_overlapping_areas():
+		Global.chef_health -= .3
 	if(Global.attack_anim):
 		$Chef/ChefSprite/AnimationPlayer.play("Attack")
 		Global.attack_anim = false
@@ -81,21 +77,10 @@ func _process(delta: float) -> void:
 				clicks()
 
 func _on_block_area_entered(area: Area2D) -> void:
-	if(parry_buffer < 20 && parry_buffer > 0 && area.is_in_group("Dough_Projectile")):
-		print("successfully parried")
-		parry = true
-	else:
-		print("chef hit!")
-		$Chef/ChefSprite/AnimationPlayer.play("Damage")
-		parry = false
-
-
-func _on_block_area_exited(area: Area2D) -> void:
-	if(parry == false):
-		Global.chef_health -= 10
-
+	area.get_node("Sprite2D").modulate = Color(245, 39, 145, 1)
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	$Chef/Block.visible = false
 	if(anim_name == "Death"):
 		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
 	$Chef/ChefSprite/AnimationPlayer.play("Idle")

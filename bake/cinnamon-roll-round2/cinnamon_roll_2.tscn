@@ -3,16 +3,15 @@
 [ext_resource type="Script" path="res://cinnamon-roll-round2/cinnamon_roll_2.gd" id="1_8d2qf"]
 [ext_resource type="Script" path="res://chef.gd" id="1_yy0yj"]
 [ext_resource type="Shader" path="res://test.gdshader" id="2_kphbj"]
+[ext_resource type="Texture2D" uid="uid://cbefcrl70pap4" path="res://assets/parry.png" id="3_jbut3"]
 [ext_resource type="Texture2D" uid="uid://brt62cl80ceoa" path="res://assets/chef.png" id="4_iyxcr"]
 [ext_resource type="Texture2D" uid="uid://ddga3p12l2ail" path="res://assets/cr-2-background.png" id="5_sqrko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxhcc"]
-size = Vector2(19.3137, 22.5545)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_5legi"]
+size = Vector2(11.4901, 11.8994)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fmq5h"]
-size = Vector2(15.2537, 14.7681)
+size = Vector2(35.3125, 13.7266)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mon7a"]
 shader = ExtResource("2_kphbj")
@@ -187,6 +186,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_bntkt"]
 resource_name = "Parry"
+length = 0.133335
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -219,7 +219,7 @@ tracks/2/path = NodePath(".:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"times": PackedFloat32Array(0, 0.0166667, 0.0333333, 0.05, 0.0666667, 0.0833333, 0.1, 0.116667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [40, 41, 42, 43, 44, 45, 46, 47]
@@ -289,7 +289,7 @@ collision_mask = 4
 script = ExtResource("1_yy0yj")
 
 [node name="ChefCollision2" type="CollisionShape2D" parent="Chef"]
-position = Vector2(-4.22747, -0.493597)
+position = Vector2(-1.23804, -0.278385)
 scale = Vector2(1.12555, 1.15681)
 shape = SubResource("RectangleShape2D_gxhcc")
 
@@ -307,13 +307,13 @@ scale = Vector2(1.59524, 1.41742)
 collision_mask = 2
 
 [node name="BlockSprite" type="Sprite2D" parent="Chef/Block"]
-position = Vector2(5.42857, -0.552795)
-scale = Vector2(7.25007, -13.2468)
-texture = SubResource("CanvasTexture_5legi")
+position = Vector2(9.4481, -0.724899)
+scale = Vector2(0.266905, 0.291074)
+texture = ExtResource("3_jbut3")
 
 [node name="BlockCollision" type="CollisionShape2D" parent="Chef/Block"]
-position = Vector2(5.71428, -0.552796)
-scale = Vector2(0.571418, 0.961779)
+position = Vector2(15.2687, -0.597958)
+scale = Vector2(0.571417, 0.961779)
 shape = SubResource("RectangleShape2D_fmq5h")
 
 [node name="ChefSprite" type="Sprite2D" parent="Chef"]
@@ -326,6 +326,15 @@ hframes = 14
 libraries = {
 "": SubResource("AnimationLibrary_qkkac")
 }
+
+[node name="Hit" type="Area2D" parent="Chef"]
+position = Vector2(-4.1268, -0.0984544)
+collision_mask = 2
+
+[node name="ChefCollision2" type="CollisionShape2D" parent="Chef/Hit"]
+position = Vector2(2.88876, -0.0984535)
+scale = Vector2(1.12555, 1.15681)
+shape = SubResource("RectangleShape2D_gxhcc")
 
 [node name="ProjectileTimer" type="Timer" parent="."]
 

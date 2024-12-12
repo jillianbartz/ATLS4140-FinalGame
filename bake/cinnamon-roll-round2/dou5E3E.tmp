@@ -256,17 +256,16 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oefpn"]
-size = Vector2(63, 94.5)
+size = Vector2(64, 93)
 
 [node name="Dough" type="Node2D"]
-position = Vector2(108, -6)
 script = ExtResource("1_wd0xn")
 
 [node name="DoughArea" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="DoughArea"]
 position = Vector2(921, 299)
-scale = Vector2(3.5, 3.5)
+scale = Vector2(1.44295, 1.49966)
 texture = ExtResource("2_u161s")
 hframes = 2
 
@@ -276,22 +275,20 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoughArea"]
-position = Vector2(889, 331)
-scale = Vector2(2.0825, 1.39756)
+position = Vector2(923, 302)
 shape = SubResource("RectangleShape2D_oefpn")
 
 [node name="DoughHealth" type="ProgressBar" parent="."]
-offset_left = 831.0
-offset_top = 212.0
-offset_right = 11260.0
-offset_bottom = 4676.0
+offset_left = 852.0
+offset_top = 225.0
+offset_right = 11281.0
+offset_bottom = 4689.0
 scale = Vector2(0.0118894, 0.00537643)
 theme_override_font_sizes/font_size = 2000
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(879, 353)
-scale = Vector2(3.87267, 1.57554)
+position = Vector2(917, 320)
+scale = Vector2(1.69988, 0.897841)
 texture = ExtResource("3_hfq06")
 
 [connection signal="input_event" from="DoughArea" to="." method="_on_dough_area_input_event"]
-[connection signal="animation_finished" from="DoughArea/Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

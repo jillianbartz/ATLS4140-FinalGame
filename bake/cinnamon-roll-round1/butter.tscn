@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvyno0rccdj3t"]
+[gd_scene load_steps=8 format=3 uid="uid://cvyno0rccdj3t"]
 
 [ext_resource type="Script" path="res://cinnamon-roll-round1/butter.gd" id="1_bwuiv"]
-[ext_resource type="Texture2D" uid="uid://kect6qwbcpk8" path="res://assets/butter-circle.png" id="1_s7ik0"]
+[ext_resource type="Texture2D" uid="uid://d3h7tf2ek32mg" path="res://assets/butter-knife-1.png" id="2_lkgup"]
+[ext_resource type="Texture2D" uid="uid://drv8yjnmffpak" path="res://assets/butter-knife-2.png" id="3_0dh4k"]
 [ext_resource type="Texture2D" uid="uid://ckivh3ktgsokl" path="res://assets/butter.png" id="3_llyet"]
 [ext_resource type="Texture2D" uid="uid://c2a46k87ms03m" path="res://assets/cr-1-background.png" id="4_g2o24"]
+[ext_resource type="Texture2D" uid="uid://do3nw4ho5io7b" path="res://assets/butter-knife-3.png" id="4_nvalj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu635"]
 size = Vector2(100, 70)
@@ -11,50 +13,83 @@ size = Vector2(100, 70)
 [node name="Butter" type="Node2D"]
 script = ExtResource("1_bwuiv")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(903, 342)
+[node name="BigKnife1" type="Area2D" parent="."]
+position = Vector2(826, 235)
 scale = Vector2(2.25284, 2.68304)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(-0.999878, -2)
-scale = Vector2(25.8499, 30.7229)
-build_mode = 1
-polygon = PackedVector2Array(-9.33701, -1.88806, -9.4057, -6.97111, -3.56156, -10.2098, -0.216959, -11.1072, 3.46849, -10.7482, 8.1765, -7.8617, 10.5625, -2.95606, 10.3068, 3.08625, 7.98477, 7.43851, 4.72538, 9.27813, 1.25422, 10.103, -2.2383, 10.0778, -4.63097, 9.09524, -9.35419, 6.13079, -9.44004, 0.926427, -7.55117, 1.01135, -7.43097, 6.23998, 1.23166, 8.99396, 6.75278, 6.23998, 6.71843, 3.92288, 6.71843, -1.85166, 6.25921, -8.05613, 1.33817, -9.92565, -2.28337, -9.31245, -7.31077, -7.05603, -7.46531, -1.77887)
+[node name="Sprite2D2" type="Sprite2D" parent="BigKnife1"]
+position = Vector2(-210.845, -89.8235)
+rotation = 3.12451
+scale = Vector2(0.233572, 0.238142)
+texture = ExtResource("2_lkgup")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(-35.9546, -51.4342)
-scale = Vector2(0.81182, 1.2932)
-texture = ExtResource("1_s7ik0")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigKnife1"]
+polygon = PackedVector2Array(-224.161, -40.6256, -196.197, -40.9983, -195.309, -103.987, -197.085, -138.276, -202.855, -142.376, -209.513, -137.903, -207.294, -132.685, -206.85, -121.131, -203.299, -99.8867, -207.738, -97.2777, -224.605, -97.2777, -226.381, -83.1147, -226.381, -67.8335, -225.049, -51.4342)
 
-[node name="Area2D3" type="Area2D" parent="."]
-position = Vector2(1047, 317)
+[node name="BigKnife2" type="Area2D" parent="."]
+position = Vector2(826, 463)
+scale = Vector2(2.25284, 2.68304)
+
+[node name="Sprite2D3" type="Sprite2D" parent="BigKnife2"]
+position = Vector2(-212.177, 76.4059)
+rotation = 0.0258318
+scale = Vector2(-0.226205, 0.255547)
+texture = ExtResource("2_lkgup")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BigKnife2"]
+position = Vector2(6.21438, 145.73)
+rotation = -2.92103
+polygon = PackedVector2Array(251.541, 68.886, 224.605, 74.5434, 203.883, -30.0524, 210.028, -31.0483, 214.823, -27.9218, 215.262, -21.9087, 218.697, 5.58646, 219.462, 13.0543, 238.682, 9.50871, 247.076, 40.8577)
+
+[node name="MedKnife1" type="Area2D" parent="."]
+position = Vector2(989, 316)
 scale = Vector2(1.74332, 2.9927)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
-position = Vector2(2.92193, 2.63821)
-scale = Vector2(33.6957, 33.3719)
-build_mode = 1
-polygon = PackedVector2Array(-7.8926, -1.17238, -7.96078, -5.54567, -3.35745, -9.87628, -9.53674e-07, -10.0778, 3.18379, -9.54875, 6.2711, -7.38201, 7.41414, -3.02385, 7.58757, 1.64039, 6.65538, 4.50612, 5.18123, 7.19399, 3.03503, 8.61697, -0.195108, 9.05178, -3.4686, 8.6565, -7.85852, 5.22229, -8.01191, 0.912565, -6.20531, 1.05241, -6.13713, 5.24772, -2.79788, 8.23863, 2.37337, 8.13785, 5.49927, 5.1145, 6.84997, 1.43609, 6.50265, -3.90516, 3.79379, -7.94223, 0.390217, -9.10829, -6.13713, -5.39312, -6.13713, -1.23594)
+[node name="Sprite2D2" type="Sprite2D" parent="MedKnife1"]
+position = Vector2(-259.275, -63.822)
+rotation = -3.11641
+scale = Vector2(-0.355116, 0.178449)
+texture = ExtResource("3_0dh4k")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
-position = Vector2(-21.823, -32.2437)
-scale = Vector2(0.948073, 1.12888)
-texture = ExtResource("1_s7ik0")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MedKnife1"]
+polygon = PackedVector2Array(-267.306, -19.7146, -274.189, -26.0634, -274.763, -48.7854, -272.469, -82.5342, -270.748, -107.595, -259.849, -108.598, -255.834, -103.92, -259.275, -99.2415, -262.717, -82.8683, -254.113, -77.1878, -245.509, -77.522, -248.377, -42.1025)
 
-[node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(1113, 323)
+[node name="MedKnife2" type="Area2D" parent="."]
+position = Vector2(987, 357)
+scale = Vector2(1.74332, 2.9927)
+
+[node name="Sprite2D" type="Sprite2D" parent="MedKnife2"]
+position = Vector2(-260.423, 68.1659)
+scale = Vector2(0.331704, 0.188305)
+texture = ExtResource("3_0dh4k")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MedKnife2"]
+polygon = PackedVector2Array(-269.027, 21.3854, -273.616, 38.761, -274.763, 65.8268, -273.616, 109.934, -273.042, 113.276, -261.57, 112.273, -259.849, 107.261, -262.717, 85.5415, -252.392, 80.8634, -248.377, 81.1976, -248.95, 45.7781)
+
+[node name="SmallKnife1" type="Area2D" parent="."]
+position = Vector2(1218, 296)
 scale = Vector2(1.25008, 2.99828)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
-position = Vector2(5.77743, 12.3748)
-scale = Vector2(33.6957, 33.3719)
-build_mode = 1
-polygon = PackedVector2Array(-7.41228, -1.2603, -7.79835, -5.18645, -6.42302, -6.66263, -2.56789, -9.58383, -9.53674e-07, -10.0778, 3.18379, -9.54875, 5.73279, -7.36484, 7.78192, -2.8426, 7.5388, 2.12906, 6.60107, 4.85364, 5.00344, 7.10072, 2.91959, 8.53323, -0.27565, 9.01073, -3.3667, 8.61749, -7.8931, 4.32768, -7.57846, 0.258818, -6.08282, 0.208847, -6.04559, 4.41879, -4.29282, 4.601, 2.37337, 8.13785, 5.49927, 5.1145, 6.84997, 1.43609, 5.94118, -6.18513, 2.88486, -8.85353, -1.24812, -9.33103, -5.99821, -5.36866, -6.15404, -1.31027)
+[node name="Sprite2D2" type="Sprite2D" parent="SmallKnife1"]
+position = Vector2(-342.378, -62.0356)
+rotation = 3.14079
+scale = Vector2(0.831213, 0.332078)
+texture = ExtResource("4_nvalj")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
-position = Vector2(-25.5984, -23.6802)
-scale = Vector2(0.883796, 0.697)
-texture = ExtResource("1_s7ik0")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SmallKnife1"]
+polygon = PackedVector2Array(-336.778, -20.345, -347.978, -33.0189, -352.777, -60.3679, -346.378, -68.039, -348.778, -76.7106, -349.578, -95.7215, -356.777, -101.058, -348.778, -107.395, -328.779, -106.728, -327.979, -91.7193, -327.179, -53.0304, -327.179, -25.6814)
+
+[node name="SmallKnife2" type="Area2D" parent="."]
+position = Vector2(1217, 377)
+scale = Vector2(1.25008, 2.99828)
+
+[node name="Sprite2D" type="Sprite2D" parent="SmallKnife2"]
+position = Vector2(-325.579, 61.3685)
+scale = Vector2(0.831213, 0.332078)
+texture = ExtResource("4_nvalj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SmallKnife2"]
+polygon = PackedVector2Array(-334.379, 19.6779, -341.578, 31.0178, -339.978, 62.7026, -337.578, 101.058, -327.179, 105.727, -314.38, 101.391, -315.18, 95.0545, -322.379, 69.7066, -315.98, 61.3685, -316.78, 39.3559)
 
 [node name="Butter" type="Area2D" parent="."]
 position = Vector2(1017, 323)
@@ -78,8 +113,11 @@ position = Vector2(577, 324)
 scale = Vector2(0.499132, 0.5)
 texture = ExtResource("4_g2o24")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="BigKnife1" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="BigKnife2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="MedKnife1" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="MedKnife2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="SmallKnife1" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="SmallKnife2" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Butter" to="." method="_on_butter_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

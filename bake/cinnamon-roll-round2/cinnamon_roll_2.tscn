@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://8dmi10swk8dc"]
+[gd_scene load_steps=21 format=3 uid="uid://8dmi10swk8dc"]
 
 [ext_resource type="Script" path="res://cinnamon-roll-round2/cinnamon_roll_2.gd" id="1_8d2qf"]
 [ext_resource type="Script" path="res://chef.gd" id="1_yy0yj"]
 [ext_resource type="Shader" path="res://test.gdshader" id="2_kphbj"]
 [ext_resource type="Texture2D" uid="uid://cbefcrl70pap4" path="res://assets/parry.png" id="3_jbut3"]
+[ext_resource type="Texture2D" uid="uid://bs6u0uicngpaj" path="res://assets/standard-empty-1.png" id="3_xbggm"]
+[ext_resource type="Texture2D" uid="uid://7jhn4gbg6jih" path="res://assets/standard-full-1.png" id="4_23nmk"]
 [ext_resource type="Texture2D" uid="uid://brt62cl80ceoa" path="res://assets/chef.png" id="4_iyxcr"]
 [ext_resource type="Texture2D" uid="uid://ddga3p12l2ail" path="res://assets/cr-2-background.png" id="5_sqrko"]
 
@@ -293,13 +295,14 @@ position = Vector2(-1.23804, -0.278385)
 scale = Vector2(1.12555, 1.15681)
 shape = SubResource("RectangleShape2D_gxhcc")
 
-[node name="ChefHealth" type="ProgressBar" parent="Chef"]
-offset_left = -24.1565
-offset_top = -21.7619
-offset_right = 5534.84
-offset_bottom = 1617.24
-scale = Vector2(0.0118894, 0.00537643)
-theme_override_font_sizes/font_size = 1200
+[node name="ChefHealthTex" type="TextureProgressBar" parent="Chef"]
+offset_left = -9.0
+offset_top = -13.0
+offset_right = 140.0
+offset_bottom = 19.0
+scale = Vector2(0.1754, 0.169246)
+texture_under = ExtResource("3_xbggm")
+texture_progress = ExtResource("4_23nmk")
 
 [node name="Block" type="Area2D" parent="Chef" groups=["Chef"]]
 position = Vector2(-2.27891, 0.569172)

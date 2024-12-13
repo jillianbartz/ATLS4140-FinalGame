@@ -12,17 +12,12 @@ func _process(delta: float) -> void:
 		$"Level 2".disabled = false
 	if(Global.croll_level2):
 		$"Level 3".disabled = false
-	
-
 
 func _on_level_1_pressed() -> void:
 	get_tree().change_scene_to_file("res://tutorials/cr_1_tutorial.tscn")
 
-
 func _on_level_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://tutorials/cr_2_tutorial.tscn")
-
-
 
 func _on_level_3_pressed() -> void:
 		get_tree().change_scene_to_file("res://tutorials/cr_3_tutorial.tscn")

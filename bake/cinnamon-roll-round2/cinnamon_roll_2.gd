@@ -49,14 +49,14 @@ func _on_click_timer_timeout() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Chef/ChefHealth.value = Global.chef_health
+	$Chef/ChefHealthTex.value = Global.chef_health
 	for body in $Chef/Block.get_overlapping_areas():
 		if(body.get_collision_layer() == 2 && Input.is_action_just_pressed("Parry")):
 			$Chef/Block.visible = true
 			$Chef/ChefSprite/AnimationPlayer.play("Parry")
 			body.queue_free()
 	for areas in $Chef/Hit.get_overlapping_areas():
-		Global.chef_health -= .3
+		Global.chef_health -= .15
 	if(Global.attack_anim):
 		$Chef/ChefSprite/AnimationPlayer.play("Attack")
 		Global.attack_anim = false

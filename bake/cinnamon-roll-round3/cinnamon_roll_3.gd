@@ -1,6 +1,6 @@
 extends Node2D
 
-var box = load("res://cinnamon-roll-round3/box.gd").new()
+var box = load("res://cinnamon-roll-round3/piping.gd").new()
 
 func _ready():
 	add_child(box)

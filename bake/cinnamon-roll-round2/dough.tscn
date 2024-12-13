@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0i4rkqnie1tp"]
+[gd_scene load_steps=13 format=3 uid="uid://b0i4rkqnie1tp"]
 
 [ext_resource type="Script" path="res://cinnamon-roll-round2/dough.gd" id="1_wd0xn"]
 [ext_resource type="Texture2D" uid="uid://di5v17ousryv1" path="res://assets/dough.png" id="2_u161s"]
+[ext_resource type="Texture2D" uid="uid://bs6u0uicngpaj" path="res://assets/standard-empty-1.png" id="3_6m60r"]
 [ext_resource type="Texture2D" uid="uid://calytcjehdsa5" path="res://assets/dough-plate.png" id="3_hfq06"]
+[ext_resource type="Texture2D" uid="uid://7jhn4gbg6jih" path="res://assets/standard-full-1.png" id="4_1xvhh"]
 
 [sub_resource type="Animation" id="Animation_dgoo8"]
 resource_name = "Attack"
@@ -255,9 +257,6 @@ _data = {
 "RESET": SubResource("Animation_gvdnj")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oefpn"]
-size = Vector2(63, 94.5)
-
 [node name="Dough" type="Node2D"]
 position = Vector2(108, -6)
 script = ExtResource("1_wd0xn")
@@ -275,18 +274,19 @@ libraries = {
 "": SubResource("AnimationLibrary_886k4")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoughArea"]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="DoughArea"]
 position = Vector2(889, 331)
 scale = Vector2(2.0825, 1.39756)
-shape = SubResource("RectangleShape2D_oefpn")
+polygon = PackedVector2Array(-29.2917, 21.466, -35.054, 6.43979, -30.7323, -10.733, -23.5294, -25.7592, -19.6879, -45.7941, -15.8463, -52.9494, -6.72269, -52.2339, 6.72269, -50.0873, 12.9652, -42.2164, 11.5246, -28.6213, 16.8067, -20.0349, 19.6879, -5.00873, 21.1284, 17.1728, 17.7671, 30.0524, 2.40094, 35.0611, -19.6879, 35.0611, -29.2917, 29.3369)
 
-[node name="DoughHealth" type="ProgressBar" parent="."]
-offset_left = 831.0
-offset_top = 212.0
-offset_right = 11260.0
-offset_bottom = 4676.0
-scale = Vector2(0.0118894, 0.00537643)
-theme_override_font_sizes/font_size = 2000
+[node name="DoughHealthTex" type="TextureProgressBar" parent="."]
+offset_left = 791.0
+offset_top = 194.0
+offset_right = 919.0
+offset_bottom = 226.0
+scale = Vector2(1.3978, 1.46146)
+texture_under = ExtResource("3_6m60r")
+texture_progress = ExtResource("4_1xvhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(879, 353)
@@ -294,4 +294,5 @@ scale = Vector2(3.87267, 1.57554)
 texture = ExtResource("3_hfq06")
 
 [connection signal="input_event" from="DoughArea" to="." method="_on_dough_area_input_event"]
+[connection signal="mouse_entered" from="DoughArea" to="." method="_on_dough_area_mouse_entered"]
 [connection signal="animation_finished" from="DoughArea/Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

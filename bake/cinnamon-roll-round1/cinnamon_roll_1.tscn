@@ -327,7 +327,7 @@ scale = Vector2(8.64928, -2.39167)
 shape = SubResource("WorldBoundaryShape2D_xgaqi")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary" groups=["Boundary"]]
-position = Vector2(1.00002, 375)
+position = Vector2(-39, 375)
 rotation = 1.57308
 scale = Vector2(4.90614, 3.44896)
 shape = SubResource("WorldBoundaryShape2D_xgaqi")

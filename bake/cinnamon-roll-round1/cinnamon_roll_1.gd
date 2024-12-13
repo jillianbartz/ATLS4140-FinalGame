@@ -93,3 +93,7 @@ func _process(delta: float) -> void:
 			if(Global.butter_score >= 1):
 				Global.croll_level1 = true
 				get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
+			elif(Global.butter_amount_missed >= 1):
+				spawned = false
+				Global.butter_amount_missed = 0
+				get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")

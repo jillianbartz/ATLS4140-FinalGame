@@ -71,5 +71,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_butter_body_entered(body: Node2D) -> void:
-	Global.butter_score = 1
-	print("game end")
+	if(body.is_in_group("Boundary")):
+		Global.butter_amount_missed += 1
+	if(body.is_in_group("Chef")):
+		Global.butter_score = 1
+		print("game end")

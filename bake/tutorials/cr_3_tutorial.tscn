@@ -1,29 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds8g6vtc7a1p5"]
+[gd_scene load_steps=4 format=3 uid="uid://ds8g6vtc7a1p5"]
 
 [ext_resource type="Script" path="res://tutorials/cr_3_tutorial.gd" id="1_4ffhf"]
+[ext_resource type="Texture2D" uid="uid://ndvpg5jdxcxy" path="res://assets/tutorial-3.png" id="2_2yg47"]
+[ext_resource type="FontFile" uid="uid://xhdw7p3vgq2d" path="res://assets/connection_ii/ConnectionII.otf" id="3_xyv0i"]
 
 [node name="CR-3-Tutorial" type="Node2D"]
 script = ExtResource("1_4ffhf")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 190.0
-offset_top = 126.0
-offset_right = 230.0
-offset_bottom = 149.0
-text = "Finishing Touches:
-
-Move ↕ using mouse
-
-[LEFT CLICK] to hold the icing pack
-
-Place icing on the cinnamon roll! Make sure to stay in the lines!
-"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(582.5, 325.5)
+scale = Vector2(0.494358, 0.497685)
+texture = ExtResource("2_2yg47")
 
 [node name="Confirm" type="Button" parent="."]
-offset_left = 195.0
-offset_top = 388.0
-offset_right = 251.0
-offset_bottom = 419.0
+offset_left = 267.0
+offset_top = 440.0
+offset_right = 410.0
+offset_bottom = 510.0
+theme_override_fonts/font = ExtResource("3_xyv0i")
+theme_override_font_sizes/font_size = 30
 text = "Got it!"
 
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

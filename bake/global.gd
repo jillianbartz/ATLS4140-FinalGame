@@ -11,6 +11,8 @@ var flour_score = 0
 var butter_score = 0
 var egg_amount_missed = 0
 var flour_amount_missed = 0
+var butter_amount_missed = 0
+
 
 var flour_spawn_x = 1200
 var flour_spawn_y = 150

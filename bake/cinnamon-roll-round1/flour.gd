@@ -12,11 +12,11 @@ func _physics_process(delta):
 func _ready() -> void:
 	if(Global.y_up == false):
 		Global.flour_spawn_y += 20
-		if(Global.flour_spawn_y >= 580):
+		if(Global.flour_spawn_y >= 525):
 			Global.y_up = true
 	else:
 		Global.flour_spawn_y -= 20
-		if(Global.flour_spawn_y <= 30):
+		if(Global.flour_spawn_y <= 150):
 			Global.y_up = false
 		
 	Global.flour_spawn_x += 40
@@ -25,7 +25,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if(Global.flour_score >= 50):
+	if(Global.flour_score >= 75):
 		queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -33,3 +33,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		queue_free()
 		print("flour")
 		Global.flour_score += 1
+	if(body.is_in_group("Boundary")):
+		print(Global.flour_amount_missed)
+		Global.flour_amount_missed += 1

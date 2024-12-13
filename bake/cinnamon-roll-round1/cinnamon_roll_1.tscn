@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://xrmhfqugwr6p"]
+[gd_scene load_steps=19 format=3 uid="uid://xrmhfqugwr6p"]
 
 [ext_resource type="Script" path="res://chef.gd" id="1_jkxph"]
 [ext_resource type="Script" path="res://cinnamon-roll-round1/cinnamon_roll_1.gd" id="1_u0kvi"]
@@ -274,6 +274,9 @@ _data = {
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xgaqi"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60wj5"]
+size = Vector2(19.6807, 11.0867)
+
 [node name="CinnamonRoll1" type="Node2D"]
 script = ExtResource("1_u0kvi")
 
@@ -309,31 +312,30 @@ theme_override_fonts/font = ExtResource("5_ocxra")
 theme_override_font_sizes/font_size = 5000
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="StaticBody2D" parent="."]
+[node name="Boundary" type="StaticBody2D" parent="." groups=["Boundary"]]
 collision_layer = 4
 physics_material_override = SubResource("PhysicsMaterial_s80dg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Boundary"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary" groups=["Boundary"]]
 position = Vector2(619, 651)
 scale = Vector2(8.38508, 1.87641)
 shape = SubResource("WorldBoundaryShape2D_xgaqi")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" groups=["Boundary"]]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundary" groups=["Boundary"]]
 position = Vector2(627, -3)
 scale = Vector2(8.64928, -2.39167)
 shape = SubResource("WorldBoundaryShape2D_xgaqi")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D" groups=["Boundary"]]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundary" groups=["Boundary"]]
 position = Vector2(1.00002, 375)
 rotation = 1.57308
 scale = Vector2(4.90614, 3.44896)
 shape = SubResource("WorldBoundaryShape2D_xgaqi")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D" groups=["Boundary"]]
-position = Vector2(1156, 359)
-rotation = 1.57308
-scale = Vector2(5.59713, -2.93165)
-shape = SubResource("WorldBoundaryShape2D_xgaqi")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundary"]
+position = Vector2(62.3495, 47.2758)
+scale = Vector2(5.9602, 8.78967)
+shape = SubResource("RectangleShape2D_60wj5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1

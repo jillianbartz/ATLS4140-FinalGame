@@ -142,6 +142,8 @@ libraries = {
 
 [node name="Area2D" type="Area2D" parent="Egg1"]
 scale = Vector2(1.18014, 1.42599)
+collision_layer = 2
+collision_mask = 5
 
 [node name="EggCollision" type="CollisionShape2D" parent="Egg1/Area2D"]
 shape = SubResource("CircleShape2D_o8kmr")

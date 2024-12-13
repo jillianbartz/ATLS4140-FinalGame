@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://coqnm8ec1mhwx"]
 
 [ext_resource type="Script" path="res://cinnamon-roll-round3/cinnamon_roll_3.gd" id="1_k00jo"]
-[ext_resource type="Script" path="res://cinnamon-roll-round3/box.gd" id="2_1jyac"]
 [ext_resource type="Texture2D" uid="uid://drdu2x7xpib0j" path="res://assets/cinnamon-roll.png" id="2_awet5"]
+[ext_resource type="Script" path="res://cinnamon-roll-round3/piping.gd" id="3_jifu6"]
 [ext_resource type="Texture2D" uid="uid://xex4o46g6hvm" path="res://assets/piping.png" id="4_5l6va"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj41p"]
-size = Vector2(15.8207, 16.891)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3j4p"]
 size = Vector2(28.5, 27.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cj41p"]
+size = Vector2(15.8207, 16.891)
 
 [node name="CinnamonRoll3" type="Node2D"]
 script = ExtResource("1_k00jo")
@@ -30,26 +30,6 @@ position = Vector2(-1047.29, 941.054)
 scale = Vector2(-92.331, 121.782)
 polygon = PackedVector2Array(-6.88217, -9.55065, -9.78137, -10.0091, -10.5683, -9.81264, -11.2931, -9.86027, -12.3078, -7.65124, -11.9351, -6.90695, -11.2876, -7.95977, -11.2631, -8.80486, -10.4721, -9.54433, -10.0859, -9.47038, -10, -9.41756, -9.98778, -9.18516, -10.4026, -8.96118, -10.5028, -8.82599, -10.6316, -8.6781, -10.6929, -8.47739, -10.699, -8.2714, -10.607, -7.98089, -10.5028, -7.84885, -10.3557, -7.73793, -10.2269, -7.61645, -10.0675, -7.56363, -9.9326, -7.53722, -9.69348, -7.45271, -9.42984, -7.53722, -9.17233, -7.57419, -8.95774, -7.70096, -8.71249, -7.88582, -8.60213, -8.06012, -8.62052, -8.35063, -8.81668, -8.67284, -9.07419, -8.85242, -9.252, -8.86299, -9.54629, -8.87355, -9.69344, -8.86827, -9.9203, -8.78904, -10.0981, -8.51436, -10.1165, -8.35063, -10.092, -8.16576, -9.85898, -7.95979, -9.5279, -7.94922, -9.30722, -8.07069, -9.18459, -8.16576, -9.2643, -8.41401, -9.4421, -8.48795, -9.58925, -8.47211, -9.7364, -8.45626, -9.64443, -8.33478, -9.42371, -8.3876, -9.30722, -8.30837, -9.30722, -8.18161, -9.41758, -8.08125, -9.51568, -7.99674, -9.78545, -8.0073, -9.87129, -8.07597, -10.0062, -8.13935, -10.0491, -8.34006, -10, -8.53021, -9.92647, -8.63585, -9.80384, -8.72564, -9.63217, -8.73092, -9.60151, -8.80486, -9.20912, -8.7943, -9.16007, -8.74148, -8.99452, -8.66754, -8.88416, -8.58831, -8.81059, -8.45098, -8.70023, -8.36119, -8.74314, -8.06012, -8.84124, -7.84885, -8.96387, -7.75906, -9.09875, -7.66926, -9.39305, -7.59532, -9.51568, -7.53194, -9.77319, -7.49496, -10.0307, -7.60588, -10.2646, -7.72864, -10.4441, -7.88345, -10.6254, -8.19217, -10.558, -8.69923, -10.0797, -9.07424, -9.6383, -9.1429, -8.85351, -9.11121, -8.33235, -8.77317, -8.0074, -8.34006, -8.16681, -7.68511, -8.73701, -7.16749, -9.38079, -6.90868, -10.1043, -6.9879, -10.7051, -7.24143, -11.2999, -7.94392, -10.8996, -7.32971, -9.81589, -6.18053, -7.84857, -6.31153)
 
-[node name="Box" type="CharacterBody2D" parent="." groups=["Spiral_Box"]]
-position = Vector2(714.8, 73.4)
-scale = Vector2(1.31736, 0.944127)
-script = ExtResource("2_1jyac")
-
-[node name="Sprite2D" type="Sprite2D" parent="Box"]
-position = Vector2(57.6909, -72.0242)
-scale = Vector2(0.33578, 0.441483)
-texture = ExtResource("4_5l6va")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
-visible = false
-position = Vector2(-2.16961e-05, -5.48363e-06)
-shape = SubResource("RectangleShape2D_cj41p")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Box"]
-position = Vector2(57.691, -72.0242)
-scale = Vector2(0.33578, 0.441483)
-polygon = PackedVector2Array(-174.073, 151.146, -169.551, 129.554, -137.902, 79.1716, -94.9487, 9.59656, -61.0385, -86.369, -15.8247, -117.558, 29.3889, -112.76, 42.9531, -206.326, 70.0813, -206.326, 113.034, -179.935, 155.987, -134.352, 144.684, -95.9656, 88.1669, -64.7768, 90.4275, -26.3905, 85.9061, 23.9914, 42.9531, 57.5793, -4.52136, 100.764, -85.906, 131.953, -131.12, 163.141, -169.551, 172.738)
-
 [node name="FinishArea" type="Area2D" parent="."]
 position = Vector2(593, 273)
 scale = Vector2(0.811741, 1.00673)
@@ -58,6 +38,29 @@ scale = Vector2(0.811741, 1.00673)
 position = Vector2(3.05176e-05, 0.993286)
 scale = Vector2(1.40645, 1.13732)
 shape = SubResource("RectangleShape2D_x3j4p")
+
+[node name="Piping" type="Area2D" parent="."]
+position = Vector2(715, 75)
+script = ExtResource("3_jifu6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Piping"]
+position = Vector2(75.7999, -68.6)
+scale = Vector2(0.442343, 0.416816)
+polygon = PackedVector2Array(-174.073, 151.146, -169.551, 129.554, -137.902, 79.1716, -94.9487, 9.59656, -61.0385, -86.369, -15.8247, -117.558, 29.3889, -112.76, 42.9531, -206.326, 70.0813, -206.326, 113.034, -179.935, 155.987, -134.352, 144.684, -95.9656, 88.1669, -64.7768, 90.4275, -26.3905, 85.9061, 23.9914, 42.9531, 57.5793, -4.52136, 100.764, -85.906, 131.953, -131.12, 163.141, -169.551, 172.738)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Piping"]
+position = Vector2(75.7998, -68.6)
+scale = Vector2(0.442343, 0.416816)
+texture = ExtResource("4_5l6va")
+
+[node name="Box" type="CharacterBody2D" parent="Piping" groups=["Spiral_Box"]]
+position = Vector2(-0.199829, -0.600029)
+scale = Vector2(1.31736, 0.944127)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piping/Box"]
+visible = false
+position = Vector2(-2.16961e-05, -5.48363e-06)
+shape = SubResource("RectangleShape2D_cj41p")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="SpiralArea" to="." method="_on_spiral_area_area_entered"]

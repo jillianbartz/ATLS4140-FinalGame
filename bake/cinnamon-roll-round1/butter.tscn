@@ -75,7 +75,7 @@ texture = ExtResource("3_0dh4k")
 polygon = PackedVector2Array(-269.027, 21.3854, -273.616, 38.761, -274.763, 65.8268, -273.616, 109.934, -273.042, 113.276, -261.57, 112.273, -259.849, 107.261, -262.717, 85.5415, -252.392, 80.8634, -248.377, 81.1976, -248.95, 45.7781)
 
 [node name="SmallKnife1" type="Area2D" parent="."]
-position = Vector2(1218, 323)
+position = Vector2(1215, 296)
 scale = Vector2(1.25008, 2.99828)
 
 [node name="Sprite2D2" type="Sprite2D" parent="SmallKnife1"]

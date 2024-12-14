@@ -19,4 +19,4 @@ func _on_finish_area_body_entered(body: Node2D) -> void:
 	if(body.is_in_group("Spiral_Box")):
 		Global.croll_level3 = true
 		Global.achievement = true
-		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
+		get_tree().change_scene_to_file("res://menus/finish.tscn")

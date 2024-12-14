@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckv47fysvkmbs"]
-
-[ext_resource type="AudioStream" uid="uid://dudcc7otra5ir" path="res://assets/audio/background_music.mp3" id="1_vi6dk"]
-
-[node name="Bg-music" type="Node2D"]
-
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("1_vi6dk")
-bus = &"Background Music"

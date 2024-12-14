@@ -62,8 +62,10 @@ func _process(delta: float) -> void:
 		Global.attack_anim = false
 	if(Global.dough_health <= 0):
 		Global.croll_level2 = true
-		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
+		new_dough.can_be_hit = false
+		new_dough.get_node("DoughArea/Sprite2D/AnimationPlayer").play("Death")
 	if(Global.chef_health <= 0):
+		new_dough.can_be_hit = false
 		$Chef/ChefSprite/AnimationPlayer.play("Death")
 	match state:
 		States.PROJECTILES:

@@ -4,6 +4,9 @@ var croll_level1 = false
 var croll_level2 = false
 var croll_level3 = false
 
+var dough_music = false
+var achievement = false
+
 var croll_level1_status = 1
 
 var egg_score = 0

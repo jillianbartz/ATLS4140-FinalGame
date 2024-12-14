@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="bake"
-run/main_scene="res://cinnamon-roll-round2/cinnamon_roll_2.tscn"
+run/main_scene="res://menus/start.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 
 Global="*res://global.gd"
+BackgroundMusic="*res://menus/Background Music.tscn"
 
 [display]
 

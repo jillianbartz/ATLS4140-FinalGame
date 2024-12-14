@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmwhuh50odin6"]
+[gd_scene load_steps=9 format=3 uid="uid://dmwhuh50odin6"]
 
 [ext_resource type="Script" path="res://cinnamon-roll-round1/egg.gd" id="1_r1hxk"]
+[ext_resource type="AudioStream" uid="uid://c2usp5qyj1f5q" path="res://assets/audio/egg.mp3" id="2_4q280"]
 [ext_resource type="Texture2D" uid="uid://cjgh7o2qxe2qm" path="res://assets/egg.png" id="2_rlfts"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o8kmr"]
@@ -125,6 +126,12 @@ _data = {
 position = Vector2(1020, 269)
 scale = Vector2(2.49087, 1.78533)
 script = ExtResource("1_r1hxk")
+
+[node name="Egg" type="AudioStreamPlayer2D" parent="Egg1"]
+position = Vector2(-409.495, -150.672)
+scale = Vector2(0.401466, 0.56012)
+stream = ExtResource("2_4q280")
+volume_db = 2.0
 
 [node name="EggCollision" type="CollisionShape2D" parent="Egg1"]
 shape = SubResource("CircleShape2D_o8kmr")

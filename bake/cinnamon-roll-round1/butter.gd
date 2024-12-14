@@ -28,6 +28,7 @@ func area1_rotation():
 	else:
 		if($BigKnife1.rotation <= deg_to_rad(-15)):
 			up1 = true
+			$Knife.play()
 		$BigKnife1.rotation -= deg_to_rad(1)
 		$BigKnife2.rotation -= deg_to_rad(1)
 
@@ -35,6 +36,7 @@ func area2_rotation():
 	if(up2):
 		if($MedKnife1.rotation >= deg_to_rad(10)):
 			up2 = false
+			$Knife.play()
 		$MedKnife1.rotation += deg_to_rad(1.3)
 		$MedKnife2.rotation += deg_to_rad(1.3)
 		
@@ -55,6 +57,7 @@ func area3_rotation():
 	else:
 		if($SmallKnife1.rotation <= deg_to_rad(-12)):
 			up3 = true
+			$Knife.play()
 		$SmallKnife1.rotation -= deg_to_rad(2)
 		$SmallKnife2.rotation -= deg_to_rad(2)
 		

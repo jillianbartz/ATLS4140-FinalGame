@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvyno0rccdj3t"]
+[gd_scene load_steps=12 format=3 uid="uid://cvyno0rccdj3t"]
 
 [ext_resource type="Script" path="res://cinnamon-roll-round1/butter.gd" id="1_bwuiv"]
 [ext_resource type="Texture2D" uid="uid://d3h7tf2ek32mg" path="res://assets/butter-knife-1.png" id="2_lkgup"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ckivh3ktgsokl" path="res://assets/butter.png" id="3_llyet"]
 [ext_resource type="Texture2D" uid="uid://c2a46k87ms03m" path="res://assets/cr-1-background.png" id="4_g2o24"]
 [ext_resource type="Texture2D" uid="uid://do3nw4ho5io7b" path="res://assets/butter-knife-3.png" id="4_nvalj"]
+[ext_resource type="AudioStream" uid="uid://dmkhn6rdv0tgf" path="res://assets/audio/knife.mp3" id="7_kdvpq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iu635"]
 size = Vector2(100, 70)
@@ -74,7 +75,7 @@ texture = ExtResource("3_0dh4k")
 polygon = PackedVector2Array(-269.027, 21.3854, -273.616, 38.761, -274.763, 65.8268, -273.616, 109.934, -273.042, 113.276, -261.57, 112.273, -259.849, 107.261, -262.717, 85.5415, -252.392, 80.8634, -248.377, 81.1976, -248.95, 45.7781)
 
 [node name="SmallKnife1" type="Area2D" parent="."]
-position = Vector2(1218, 296)
+position = Vector2(1218, 323)
 scale = Vector2(1.25008, 2.99828)
 
 [node name="Sprite2D2" type="Sprite2D" parent="SmallKnife1"]
@@ -87,7 +88,7 @@ texture = ExtResource("4_nvalj")
 polygon = PackedVector2Array(-336.778, -20.345, -347.978, -33.0189, -352.777, -60.3679, -346.378, -68.039, -348.778, -76.7106, -349.578, -95.7215, -356.777, -101.058, -348.778, -107.395, -328.779, -106.728, -327.979, -91.7193, -327.179, -53.0304, -327.179, -25.6814)
 
 [node name="SmallKnife2" type="Area2D" parent="."]
-position = Vector2(1217, 377)
+position = Vector2(1215, 364)
 scale = Vector2(1.25008, 2.99828)
 
 [node name="Sprite2D" type="Sprite2D" parent="SmallKnife2"]
@@ -146,6 +147,9 @@ shape = SubResource("WorldBoundaryShape2D_5gf4p")
 position = Vector2(62.3495, 47.2758)
 scale = Vector2(5.9602, 8.78967)
 shape = SubResource("RectangleShape2D_6obbs")
+
+[node name="Knife" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_kdvpq")
 
 [connection signal="body_entered" from="BigKnife1" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="BigKnife2" to="." method="_on_area_2d_body_entered"]

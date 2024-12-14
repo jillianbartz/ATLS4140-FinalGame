@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdj4tsgqsauq0"]
+
+[ext_resource type="Script" path="res://menus/background_music.gd" id="1_qwvyn"]
+[ext_resource type="AudioStream" uid="uid://dudcc7otra5ir" path="res://assets/audio/background_music.mp3" id="2_ktf13"]
+[ext_resource type="AudioStream" uid="uid://dk5fmextqlebx" path="res://assets/audio/dough_boss_music.mp3" id="3_r33so"]
+[ext_resource type="AudioStream" uid="uid://um17jdvtyweb" path="res://assets/audio/achievement.wav" id="4_s8245"]
+
+[node name="BackgroundMusic" type="Node2D"]
+script = ExtResource("1_qwvyn")
+
+[node name="BG" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ktf13")
+bus = &"Background Music"
+
+[node name="DoughFight" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_r33so")
+volume_db = -7.0
+bus = &"Background Music"
+
+[node name="Achievement" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_s8245")
+bus = &"Background Music"

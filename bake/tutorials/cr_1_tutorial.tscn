@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://mmgq1hpnsbww"]
+[gd_scene load_steps=5 format=3 uid="uid://mmgq1hpnsbww"]
 
 [ext_resource type="Script" path="res://tutorials/cr_1_tutorial.gd" id="1_nfstd"]
 [ext_resource type="Texture2D" uid="uid://cxnlscytir7x7" path="res://assets/tutorial-1.png" id="2_dfkn0"]
 [ext_resource type="FontFile" uid="uid://xhdw7p3vgq2d" path="res://assets/connection_ii/ConnectionII.otf" id="3_cyiyl"]
+[ext_resource type="AudioStream" uid="uid://bj3bii2m0llj8" path="res://assets/audio/click.mp3" id="4_s5hjr"]
 
 [node name="CR-1-Tutorial" type="Node2D"]
 script = ExtResource("1_nfstd")
@@ -20,5 +21,8 @@ offset_bottom = 510.0
 theme_override_fonts/font = ExtResource("3_cyiyl")
 theme_override_font_sizes/font_size = 25
 text = "Got it!"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_s5hjr")
 
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

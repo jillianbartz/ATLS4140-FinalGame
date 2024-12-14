@@ -31,6 +31,7 @@ func peaceful_anim():
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if(anim_name == "Death"):
+		Global.dough_music = false
 		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
 	if(angy):
 		$DoughArea/Sprite2D/AnimationPlayer.play("Idle")
@@ -41,6 +42,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_dough_area_mouse_entered() -> void:
 	if(can_be_hit):
 		print("Dough hit")
+		$DoughHit.play()
 		$DoughArea/Sprite2D/AnimationPlayer.play("Damage_Taken")
 		Global.attack_anim = true
 		Global.dough_health -= .5

@@ -18,15 +18,18 @@ func _ready() -> void:
 	add_child(new_dough)
 	$Chef/Block.visible = false
 	Global.chef_health = 100
+	Global.dough_music = true
+	$BossMusic.play()
 
 func use_spawner():
+	$DoughProjectile.play()
 	var projectile = load("res://cinnamon-roll-round2/dough_projectile_spawner.gd").new()
 	add_child(projectile)
 
 func throw_projectiles():
 	projectile_start = true
 	for i in range(6):
-		$ProjectileTimer.start(randi_range(.5, 5))
+		$ProjectileTimer.start(randi_range(.5, 4))
 		await $ProjectileTimer.timeout 
 		use_spawner()
 	$ProjectileTimer.start(2)
@@ -53,6 +56,7 @@ func _process(delta: float) -> void:
 	for body in $Chef/Block.get_overlapping_areas():
 		if(body.get_collision_layer() == 2 && Input.is_action_just_pressed("Parry")):
 			$Chef/Block.visible = true
+			$ChefBlock.play()
 			$Chef/ChefSprite/AnimationPlayer.play("Parry")
 			body.queue_free()
 	for areas in $Chef/Hit.get_overlapping_areas():
@@ -60,9 +64,10 @@ func _process(delta: float) -> void:
 	if(Global.attack_anim):
 		$Chef/ChefSprite/AnimationPlayer.play("Attack")
 		Global.attack_anim = false
-	if(Global.dough_health <= 0):
+	if(Global.dough_health <= 4):
 		Global.croll_level2 = true
 		new_dough.can_be_hit = false
+		Global.achievement = true
 		new_dough.get_node("DoughArea/Sprite2D/AnimationPlayer").play("Death")
 	if(Global.chef_health <= 0):
 		new_dough.can_be_hit = false
@@ -84,5 +89,6 @@ func _on_block_area_entered(area: Area2D) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	$Chef/Block.visible = false
 	if(anim_name == "Death"):
+		Global.dough_music = false
 		get_tree().change_scene_to_file("res://menus/cinnamon-roll-menu.tscn")
 	$Chef/ChefSprite/AnimationPlayer.play("Idle")

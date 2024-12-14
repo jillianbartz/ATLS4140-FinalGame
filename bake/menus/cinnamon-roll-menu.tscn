@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ojl4hf0cme4c"]
+[gd_scene load_steps=6 format=3 uid="uid://ojl4hf0cme4c"]
 
 [ext_resource type="Script" path="res://menus/cinnamon_roll_menu.gd" id="1_wfjj2"]
 [ext_resource type="FontFile" uid="uid://xhdw7p3vgq2d" path="res://assets/connection_ii/ConnectionII.otf" id="2_72rjb"]
 [ext_resource type="Texture2D" uid="uid://m4bko4t0n6p1" path="res://assets/menu.PNG" id="2_tpaox"]
 [ext_resource type="Texture2D" uid="uid://c8alnunex45q8" path="res://assets/CinnamonRollBLACKOUTLINE.png" id="3_htl82"]
+[ext_resource type="AudioStream" uid="uid://bj3bii2m0llj8" path="res://assets/audio/click.mp3" id="5_x1nwf"]
 
 [node name="Cinnamon-roll-menu" type="Node2D"]
 script = ExtResource("1_wfjj2")
@@ -57,6 +58,9 @@ texture = ExtResource("2_tpaox")
 position = Vector2(572, 140)
 scale = Vector2(2.83242, 2.48346)
 texture = ExtResource("3_htl82")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x1nwf")
 
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]

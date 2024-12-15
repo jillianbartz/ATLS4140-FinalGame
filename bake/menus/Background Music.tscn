@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://menus/background_music.gd" id="1_qwvyn"]
 [ext_resource type="AudioStream" uid="uid://dudcc7otra5ir" path="res://assets/audio/background_music.mp3" id="2_ktf13"]
-[ext_resource type="AudioStream" uid="uid://dk5fmextqlebx" path="res://assets/audio/dough_boss_music.mp3" id="3_r33so"]
+[ext_resource type="AudioStream" uid="uid://c3pg1lbd3y5k7" path="res://assets/audio/dough_boss_music.wav" id="3_7anl1"]
 [ext_resource type="AudioStream" uid="uid://um17jdvtyweb" path="res://assets/audio/achievement.wav" id="4_s8245"]
 
 [node name="BackgroundMusic" type="Node2D"]
@@ -10,15 +10,13 @@ script = ExtResource("1_qwvyn")
 
 [node name="BG" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ktf13")
-bus = &"Background Music"
-parameters/looping = true
-
-[node name="DoughFight" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_r33so")
-volume_db = -7.0
-bus = &"Background Music"
 parameters/looping = true
 
 [node name="Achievement" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_s8245")
-bus = &"Background Music"
+
+[node name="DoughFight" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7anl1")
+volume_db = -80.0
+
+[connection signal="finished" from="DoughFight" to="." method="_on_dough_fight_finished"]

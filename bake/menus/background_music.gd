@@ -11,10 +11,11 @@ func _process(delta: float) -> void:
 	if(Global.achievement):
 		$Achievement.play()
 		Global.achievement = false
-	if(Global.dough_music):
+	if(Global.dough_music && !$DoughFight.playing):
 		$BG.stop()
+		$DoughFight.volume_db = 0
 		$DoughFight.play()
-	else:
+	elif(!Global.dough_music):
 		if($DoughFight.playing):
 			$DoughFight.stop()
 			$BG.play()

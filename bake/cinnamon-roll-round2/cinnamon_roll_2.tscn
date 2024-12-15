@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://7jhn4gbg6jih" path="res://assets/standard-full-1.png" id="4_23nmk"]
 [ext_resource type="Texture2D" uid="uid://brt62cl80ceoa" path="res://assets/chef.png" id="4_iyxcr"]
 [ext_resource type="Texture2D" uid="uid://ddga3p12l2ail" path="res://assets/cr-2-background.png" id="5_sqrko"]
-[ext_resource type="AudioStream" uid="uid://dk5fmextqlebx" path="res://assets/audio/dough_boss_music.mp3" id="9_d4h2u"]
+[ext_resource type="AudioStream" uid="uid://c3pg1lbd3y5k7" path="res://assets/audio/dough_boss_music.wav" id="9_d4h2u"]
 [ext_resource type="AudioStream" uid="uid://f0ky4c3bqm52" path="res://assets/audio/dough_shoot.wav" id="10_vw5u1"]
 [ext_resource type="AudioStream" uid="uid://d4cq2q6cssj2j" path="res://assets/audio/block.wav" id="11_fskla"]
 
@@ -387,6 +387,7 @@ stream = ExtResource("10_vw5u1")
 
 [node name="ChefBlock" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_fskla")
+volume_db = 14.375
 
 [connection signal="area_entered" from="Chef/Block" to="." method="_on_block_area_entered"]
 [connection signal="area_exited" from="Chef/Block" to="." method="_on_block_area_exited"]

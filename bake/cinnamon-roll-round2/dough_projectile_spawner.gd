@@ -10,12 +10,10 @@ var changed_position = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pattern = randi_range(0, 2)
-	print(pattern)
 
 
 func pattern_0():
 	await get_tree().create_timer(.3).timeout
-	print(Global.shooting)
 	while(amt < 10):
 		var new_self = self_instance.instantiate()
 		new_self.fire(Vector2(0,changed_position), 400)

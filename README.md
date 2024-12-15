@@ -1,4 +1,4 @@
-##Bake
+# Bake
 
 This is an independently developed game called "Bake" in Godot! Can be run in Godot.
 

@@ -22,7 +22,7 @@ var flour_spawn_y = 150
 var y_up = false
 
 var chef_health = 100
-var dough_health = 100
+var dough_health = 220
 
 var attack_anim = false
 var shooting = false

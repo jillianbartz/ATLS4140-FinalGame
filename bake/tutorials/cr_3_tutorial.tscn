@@ -9,20 +9,21 @@
 script = ExtResource("1_4ffhf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(582.5, 325.5)
-scale = Vector2(0.494358, 0.497685)
+position = Vector2(575.5, 324)
+scale = Vector2(0.500434, 0.5)
 texture = ExtResource("2_2yg47")
 
 [node name="Confirm" type="Button" parent="."]
-offset_left = 267.0
-offset_top = 440.0
-offset_right = 410.0
-offset_bottom = 510.0
+offset_left = 253.0
+offset_top = 437.0
+offset_right = 396.0
+offset_bottom = 507.0
 theme_override_fonts/font = ExtResource("3_xyv0i")
 theme_override_font_sizes/font_size = 30
 text = "Got it!"
 
 [node name="Click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-14, -3)
 stream = ExtResource("4_sgb7d")
 
 [connection signal="pressed" from="Confirm" to="." method="_on_confirm_pressed"]

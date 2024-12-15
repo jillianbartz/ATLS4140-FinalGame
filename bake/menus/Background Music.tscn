@@ -11,11 +11,13 @@ script = ExtResource("1_qwvyn")
 [node name="BG" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ktf13")
 bus = &"Background Music"
+parameters/looping = true
 
 [node name="DoughFight" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_r33so")
 volume_db = -7.0
 bus = &"Background Music"
+parameters/looping = true
 
 [node name="Achievement" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_s8245")

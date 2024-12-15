@@ -26,7 +26,7 @@ func _ready() -> void:
 
 func spawn_eggs():
 	var egg_duplicates = 0
-	while(egg_duplicates < 7):
+	while(egg_duplicates < 9):
 		var new_egg = egg.instantiate()
 		add_child(new_egg)
 		egg_duplicates += 1
@@ -53,16 +53,16 @@ func spawn_butter():
 func _process(delta: float) -> void:
 	match state:
 		States.EGG:
-			$Score.text = str(Global.egg_score) + "/5"
+			$Score.text = str(Global.egg_score) + "/7"
 			if(!spawned):
 				Global.croll_level1_status = 1
 				spawn_eggs()
-			if(Global.egg_score >= 5):
+			if(Global.egg_score >= 7):
 				spawned = false
 				$Chef.global_position.x = 64
 				$Chef.global_position.y = 288
 				state = States.FLOUR
-			elif(Global.egg_amount_missed + Global.egg_score == 7):
+			elif(Global.egg_amount_missed + Global.egg_score == 9):
 				print("missed all")
 				spawned = false
 				Global.egg_amount_missed = 0

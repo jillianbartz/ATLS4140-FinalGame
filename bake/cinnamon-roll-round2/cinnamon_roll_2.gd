@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 	if(Global.attack_anim):
 		$Chef/ChefSprite/AnimationPlayer.play("Attack")
 		Global.attack_anim = false
-	if(Global.dough_health <= 4):
+	if(Global.dough_health <= 30):
 		Global.croll_level2 = true
 		new_dough.can_be_hit = false
 		Global.achievement = true
